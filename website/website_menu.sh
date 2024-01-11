@@ -14,12 +14,11 @@ RESET=$(tput sgr0)
 
 # Define menu options
 options=(
-    "${BOLD}${GREEN} 站点相关 >> ${RESET}"
     "${BOLD}${GREEN} v2board >> ${RESET}"
     "${BOLD}${GREEN} SSPanel >> ${RESET}"
     "${BOLD}${GREEN} wordpress >> ${RESET}"
     "${BOLD}${GREEN} 开发中... >> ${RESET}\n"
-    "${BOLD}${RED}退出${RESET}"
+    "${BOLD}${RED} 主菜单 ${RESET}"
 )
 
 # Show menu
@@ -27,7 +26,7 @@ function show_menu() {
     echo -e "======== 菜单 ========\n"
     for i in "${!options[@]}"; do
         if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
-            echo -e "${BOLD}${RED}0. ${options[$i]}${RESET}\n"  # 将退出选项标记为红色
+            echo -e "${BOLD}${RED}m. ${options[$i]}${RESET}\n"  # 将退出选项标记为红色
         else
             echo -e "${BOLD}${GREEN}$((i+1)). ${options[$i]}${RESET}"
         fi
@@ -40,16 +39,9 @@ function handle_choice() {
     # 1-1 菜单
     case $choice in
         1)
-            clear  # 清屏
-            echo -e "${BOLD}${RED}你即将进行以下操作...${RESET}\n"
-            while true; do
-                echo -e "${BOLD}${YELLOW}=== 站点相关 === ${RESET}\n"
-                echo -e "${BOLD}${YELLOW} 1. V2Board >> ${RESET}"
-                echo -e "${BOLD}${YELLOW} 2. SSPanel >> ${RESET}"
-                echo -e "${BOLD}${YELLOW} 3. wordpress >> ${RESET}\n"
-                echo -e "${BOLD}${RED} 01. 返回上一级菜单 ${RESET}\n"
-                read -p "${BOLD}${BLUE} 请输入选项编号: ${RESET}" sub_choice
-            done
+            clear
+            echo -e "${BOLD}${YELLOW} 选项1 ${RESET}"
+            # 在这里添加选项三的操作
         ;;
         2)
             clear
@@ -61,9 +53,10 @@ function handle_choice() {
             echo -e "${BOLD}${YELLOW} 选项3 ${RESET}"
             # 在这里添加选项三的操作
         ;;
-        0)
-            echo "${BOLD}${RED} 谢谢使用，再见！ ${RESET}"
-            exit 0
+        M|m)
+            echo "${BOLD}${RED} 返回主菜单！ ${RESET}"
+            cd easytools
+            ./menu.sh
         ;;
         *)
             echo -e "${BOLD}${RED} 无效选项，请重新选择 ${RESET}"
