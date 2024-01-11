@@ -43,9 +43,18 @@ options=(
 # Show menu
 function show_menu() {
     echo -e "======== 主菜单 ========\n"
+    # for i in "${!options[@]}"; do
+    #     if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
+    #         echo -e "${BOLD}${RED}0. ${options[$i]}${RESET}\n"  # 将退出选项标记为红色
+    #     else
+    #         echo -e "${BOLD}${GREEN}$((i+1)). ${options[$i]}${RESET}"
+    #     fi
+    # done
     for i in "${!options[@]}"; do
         if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
             echo -e "${BOLD}${RED}0. ${options[$i]}${RESET}\n"  # 将退出选项标记为红色
+            elif [[ $i -eq 87 ]]; then
+            echo -e "${BOLD}${YELLOW}88. Uninstall${RESET}"  # 序号为 88 的卸载选项，标记为黄色
         else
             echo -e "${BOLD}${GREEN}$((i+1)). ${options[$i]}${RESET}"
         fi

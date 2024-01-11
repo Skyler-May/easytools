@@ -13,7 +13,7 @@ if [ -n "$result" ]; then
     # 删除 '/usr/local/bin/et' 链接
     rm -f /usr/local/bin/et
     
-    echo "Deleted 'easytools' folder and '/usr/local/bin/et' link."
+    echo "删除了 'easytools' 主体 和 'et' 快捷方式."
 else
-    echo "Could not find 'easytools' folder in any directory."
+    echo "在任何目录中找不到关于“easytools”文件夹."
 fi
