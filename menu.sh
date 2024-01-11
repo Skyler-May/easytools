@@ -85,8 +85,7 @@ function handle_choice() {
         ;;
         88)
             echo "${BOLD}${RED} 谢谢使用，再见！ ${RESET}"
-            rm -rf easytools
-            rm /usr/local/bin/et
+            ./easytools/uninstall
         ;;
         *)
             echo -e "${BOLD}${RED} 无效选项，请重新选择 ${RESET}"
