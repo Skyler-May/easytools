@@ -13,4 +13,4 @@ et
 ln -s "/root/easytools/menu.sh" "/usr/local/bin/et"
 
 # Delete script after Run 'et'
-find easytools -name "setup_easytools.sh" -exec rm {} \;
+find / -name "setup_easytools.sh" -exec rm {} \;
