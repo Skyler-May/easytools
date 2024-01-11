@@ -52,8 +52,8 @@ function show_menu() {
 
 
 
-# 主循环
-while true; do
-    show_menu
-    handle_choice
-done
+# # 主循环
+# while true; do
+#     show_menu
+#     handle_choice
+# done
