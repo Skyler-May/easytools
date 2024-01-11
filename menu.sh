@@ -44,7 +44,7 @@ function show_menu() {
     echo -e "======== 主菜单 ========\n"
     for i in "${!options[@]}"; do
         if [[ $i -eq $(( ${#options[@]} - 2 )) ]]; then
-            echo -e "${BOLD}${RED}0. ${options[$i]}${RESET}"  # 将退出选项标记为红色
+            echo -e "${BOLD}${RED}e. ${options[$i]}${RESET}"  # 将退出选项标记为红色
             elif [[ $i -eq $(( ${#options[@]} -1 )) ]]; then
             echo -e "${BOLD}${GRAY}u. ${options[$i]}${RESET}\n"  # 序号为 u 的卸载选项，标记为灰色
         else
@@ -69,7 +69,8 @@ function handle_choice() {
         1)
             clear  # 清屏
             echo -e "${BOLD}${RED} website ${RESET}\n"
-            ./website/website.sh
+            cd easytools/website
+            ./website_menu.sh
         ;;
         2)
             clear
@@ -81,7 +82,7 @@ function handle_choice() {
             echo -e "${BOLD}${YELLOW} 选项3 ${RESET}"
             # 在这里添加选项三的操作
         ;;
-        0)
+        E|e)
             
             exit 0
         ;;

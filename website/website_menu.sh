@@ -1,6 +1,6 @@
 #!/bin/bash
-clear  # 清屏
 
+clear  # 清屏
 # Define colors and styles using tput
 BOLD=$(tput bold)
 RED=$(tput setaf 1)
@@ -49,60 +49,6 @@ function handle_choice() {
                 echo -e "${BOLD}${YELLOW} 3. wordpress >> ${RESET}\n"
                 echo -e "${BOLD}${RED} 01. 返回上一级菜单 ${RESET}\n"
                 read -p "${BOLD}${BLUE} 请输入选项编号: ${RESET}" sub_choice
-                # 1-2 菜单
-                case $sub_choice in
-                    1)
-                        clear  # 清屏
-                        while true; do
-                            echo -e "${BOLD}${BLUE}=== V2Board === ${RESET}\n"
-                            echo -e "${BOLD}${BLUE} 1. 安装 ${RESET}"
-                            echo -e "${BOLD}${BLUE} 2. 更新 ${RESET}"
-                            echo -e "${BOLD}${RED} 01. 返回上一级菜单 ${RESET}\n"
-                            read -p "${BOLD}${BLUE} 请输入选项编号: ${RESET}" sub_choice
-                            # 1-3 菜单
-                            case $sub_choice in
-                                1)
-                                    clear  # 清屏
-                                    echo -e "${BOLD}${GREEN} 正在执行安装...${RESET}"
-                                    ./v2board/install.sh
-                                ;;
-                                2)
-                                    clear  # 清屏
-                                    echo "此操作需要在网站根目录下执行"
-                                    ./v2board/update.sh
-                                    #
-                                ;;
-                                01)
-                                    clear  # 清屏
-                                    # return # 返回主菜单
-                                    break # 返回上一级菜单
-                                ;;
-                                *)
-                                    clear  # 清屏
-                                    echo "无效选项，请重新选择"
-                                ;;
-                            esac
-                        done
-                    ;;
-                    2)
-                        clear  # 清屏
-                        echo "Docker 部署 SSPanel"
-                        ./SSPanel.sh  # 调用同目录下的 script_one.sh 脚本
-                    ;;
-                    3)
-                        clear  # 清屏
-                        echo "Docker 部署 XrayR"
-                        # /etc/easytools/install_XrayR.sh  # 调用同目录下的 script_one.sh 脚本
-                    ;;
-                    01)
-                        clear  # 清屏
-                        ./easytools/menu.sh
-                    ;;
-                    *)
-                        clear  # 清屏
-                        echo "无效选项，请重新选择"
-                    ;;
-                esac
             done
         ;;
         2)
