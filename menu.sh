@@ -71,7 +71,7 @@ function handle_choice() {
             echo -e "${BOLD}${RED} 站点部署 ${RESET}\n"
             # 在这里添加选项1的操作
             cd "$(dirname "$(readlink -f "$0")")/website"  # 这里使用绝对路径
-            ./website_menu.sh
+            $MENU_SCRIPT_PATH/website_menu.sh
         ;;
         2)
             clear
