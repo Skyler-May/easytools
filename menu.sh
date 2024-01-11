@@ -1,5 +1,5 @@
 #!/bin/bash
-clear  # 清屏
+clear
 echo -e "\033[96m———————————————————————— EasyTools 工具箱 v1.0.0 ——————————————————————————"
 echo "                                                                                "
 echo " ▓█████  ▄▄▄        ██████ ▓██   ██▓ ███████▓ ▒█████   ▒█████   ██▓      ██████ "
@@ -67,7 +67,7 @@ function handle_choice() {
     # 1-1 菜单
     case $choice in
         1)
-            clear  # 清屏
+            clear
             echo -e "${BOLD}${RED} website ${RESET}\n"
             cd easytools/website
             ./website_menu.sh
