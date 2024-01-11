@@ -8,10 +8,10 @@ GREEN=$(tput setaf 2)
 YELLOW=$(tput setaf 3)
 BLUE=$(tput setaf 4)
 PURPLE=$(tput setaf 5)
+GRAY=$(tput setaf 0)
 
 RESET=$(tput sgr0)
 
-Define menu options
 # Define menu options
 options=(
     "${BOLD}${GREEN} 站点相关 >> ${RESET}"
@@ -96,7 +96,7 @@ function handle_choice() {
                     ;;
                     01)
                         clear  # 清屏
-                        break
+                        ./easytools/menu.sh
                     ;;
                     *)
                         clear  # 清屏

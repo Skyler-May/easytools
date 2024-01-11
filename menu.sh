@@ -1,6 +1,6 @@
 #!/bin/bash
 clear  # 清屏
-echo -e "\033[96m—————————————————— EasyTools 工具箱 v1.0.0 ————————————————————"
+echo -e "\033[96m———————————————————————— EasyTools 工具箱 v1.0.0 ——————————————————————————"
 echo "                                                                                "
 echo " ▓█████  ▄▄▄        ██████ ▓██   ██▓ ███████▓ ▒█████   ▒█████   ██▓      ██████ "
 echo " ▓█   ▀ ▒████▄    ▒██    ▒  ▒██  ██▒▓  ██▒ ▓▒▒██▒  ██▒▒██▒  ██▒▓██▒    ▒██    ▒ "
@@ -68,15 +68,8 @@ function handle_choice() {
     case $choice in
         1)
             clear  # 清屏
-            echo -e "${BOLD}${RED}你即将进行以下操作...${RESET}\n"
-            while true; do
-                echo -e "${BOLD}${YELLOW}=== 站点相关 === ${RESET}\n"
-                echo -e "${BOLD}${YELLOW} 1. V2Board >> ${RESET}"
-                echo -e "${BOLD}${YELLOW} 2. SSPanel >> ${RESET}"
-                echo -e "${BOLD}${YELLOW} 3. wordpress >> ${RESET}\n"
-                echo -e "${BOLD}${RED} 01. 返回上一级菜单 ${RESET}\n"
-                read -p "${BOLD}${BLUE} 请输入选项编号: ${RESET}" sub_choice
-            done
+            echo -e "${BOLD}${RED} website ${RESET}\n"
+            ./website/website.sh
         ;;
         2)
             clear
