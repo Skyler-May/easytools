@@ -47,7 +47,7 @@ function show_menu() {
         if [[ $i -eq $(( ${#options[@]} - 2 )) ]]; then
             echo -e "${BOLD}${RED}0. ${options[$i]}${RESET}"  # 将退出选项标记为红色
             elif [[ $i -eq $(( ${#options[@]} -1 )) ]]; then
-            echo -e "${BOLD}${GRAY}U. 卸载${RESET}\n"  # 序号为 u 的卸载选项，标记为灰色
+            echo -e "${BOLD}${GRAY}U. ${RESET}\n"  # 序号为 u 的卸载选项，标记为灰色
         else
             echo -e "${BOLD}${GREEN}$((i+1)). ${options[$i]}${RESET}"
         fi
