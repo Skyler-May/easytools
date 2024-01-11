@@ -30,14 +30,14 @@ Define menu options
 options=(
     "${BOLD}${GREEN} 站点部署 >> ${RESET}"
     "${BOLD}${GREEN} XrayR [后端] 部署 >> ${RESET}"
-    "${BOLD}${GREEN}开发中... >> ${RESET}"
-    "${BOLD}${GREEN}开发中... >> ${RESET}"
-    "${BOLD}${GREEN}开发中... >> ${RESET}"
-    "${BOLD}${GREEN}开发中... >> ${RESET}"
-    "${BOLD}${GREEN}开发中... >> ${RESET}"
-    "${BOLD}${GREEN}开发中... >> ${RESET}\n"
-    "${BOLD}${RED}退出${RESET}\n"
-    "${BOLD}${GRAY}卸载${RESET}\n"
+    "${BOLD}${GREEN} 开发中... >> ${RESET}"
+    "${BOLD}${GREEN} 开发中... >> ${RESET}"
+    "${BOLD}${GREEN} 开发中... >> ${RESET}"
+    "${BOLD}${GREEN} 开发中... >> ${RESET}"
+    "${BOLD}${GREEN} 开发中... >> ${RESET}"
+    "${BOLD}${GREEN} 开发中... >> ${RESET}\n"
+    "${BOLD}${RED} 退出 ${RESET}\n"
+    "${BOLD}${GRAY} 卸载 ${RESET}\n"
 )
 
 # Show menu
@@ -46,8 +46,8 @@ function show_menu() {
     for i in "${!options[@]}"; do
         if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
             echo -e "${BOLD}${RED}0. ${options[$i]}${RESET}\n"  # 将退出选项标记为红色
-            elif [[ $i -eq 87 ]]; then
-            echo -e "${BOLD}${YELLOW}88. Uninstall${RESET}"  # 序号为 88 的卸载选项，标记为黄色
+        else if [[ $i -eq $(( ${#options[@]} - 87 )) ]]; then
+            echo -e "${BOLD}${GRAY}88. Uninstall${RESET}"  # 序号为 88 的卸载选项，标记为灰色
         else
             echo -e "${BOLD}${GREEN}$((i+1)). ${options[$i]}${RESET}"
         fi
@@ -84,6 +84,10 @@ function handle_choice() {
         0)
             
             exit 0
+        ;;
+        88)
+            ./easytools/uninstall.sh
+            echo "${BOLD}${RED} 谢谢使用，再见！ ${RESET}"
         ;;
         *)
             echo -e "${BOLD}${RED} 无效选项，请重新选择 ${RESET}"
