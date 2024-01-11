@@ -37,9 +37,9 @@ options=(
     "${BOLD}${BLUE} 开发中... >> ${RESET}"
     "${BOLD}${BLUE} 开发中... >> ${RESET}"
     "${BOLD}${BLUE} 开发中... >> ${RESET}\n"
-    "${BOLD}${RED} 退出 ${RESET}\n"
-    "${BOLD}${GREEN} 更新 ${RESET}\n"
-    "${BOLD}${GRAY} 卸载 ${RESET}\n"
+    "${BOLD}${RED} 退出 ${RESET}"
+    "${BOLD}${GREEN} 更新 ${RESET}"
+    "${BOLD}${GRAY} 卸载 ${RESET}"
 )
 
 # Show menu
@@ -49,7 +49,7 @@ function show_menu() {
         if [[ $i -eq $(( ${#options[@]} - 3 )) ]]; then
             echo -e "${BOLD}${RED}q. ${options[$i]}${RESET}"  # q 退出选项，标记为红色
             elif [[ $i -eq $(( ${#options[@]} -2 )) ]]; then
-            echo -e "${BOLD}${GREEN}u. ${options[$i]}${RESET}\n"  # u 更新选项，标记为绿色
+            echo -e "${BOLD}${GREEN}u. ${options[$i]}${RESET}"  # u 更新选项，标记为绿色
             elif [[ $i -eq $(( ${#options[@]} -1 )) ]]; then
             echo -e "${BOLD}${GRAY}r. ${options[$i]}${RESET}\n"  # r 卸载选项，标记为灰色
         else
@@ -93,9 +93,8 @@ function handle_choice() {
         ;;
         U|u)
             clear
-            echo "${BOLD}${RED} 正在拉取分支... ${RESET}"
+            echo "${BOLD}${GREEN} 正在拉取分支... ${RESET}"
             ./easytools/updata.sh
-            exit 0
         ;;
         R|r)
             clear
