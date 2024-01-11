@@ -21,7 +21,7 @@ GREEN=$(tput setaf 2)
 YELLOW=$(tput setaf 3)
 BLUE=$(tput setaf 4)
 PURPLE=$(tput setaf 5)
-GRAY=$(tput setaf 7)
+GRAY=$(tput setaf 0)
 
 RESET=$(tput sgr0)
 
@@ -44,10 +44,10 @@ options=(
 function show_menu() {
     echo -e "======== 主菜单 ========\n"
     for i in "${!options[@]}"; do
-        if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
-            echo -e "${BOLD}${RED}0. ${options[$i]}${RESET}\n"  # 将退出选项标记为红色
-            elif [[ $i -eq $(( ${#options[@]} - 88 )) ]]; then
-            echo -e "${BOLD}${GRAY}88. Uninstall${RESET}"  # 序号为 88 的卸载选项，标记为灰色
+        if [[ $i -eq $(( ${#options[@]} - 2 )) ]]; then
+            echo -e "${BOLD}${RED}0. ${options[$i]}${RESET}"  # 将退出选项标记为红色
+            elif [[ $i -eq $(( ${#options[@]} -1 )) ]]; then
+            echo -e "${BOLD}${GRAY}U. 卸载${RESET}\n"  # 序号为 u 的卸载选项，标记为灰色
         else
             echo -e "${BOLD}${GREEN}$((i+1)). ${options[$i]}${RESET}"
         fi
@@ -85,9 +85,10 @@ function handle_choice() {
             
             exit 0
         ;;
-        88)
-            ./easytools/uninstall.sh
+        U|u)
             echo "${BOLD}${RED} 谢谢使用，再见！ ${RESET}"
+            ./easytools/uninstall.sh
+            exit 0
         ;;
         *)
             echo -e "${BOLD}${RED} 无效选项，请重新选择 ${RESET}"
