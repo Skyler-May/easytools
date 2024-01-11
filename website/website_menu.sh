@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# 在脚本开始处保存初始的工作目录
-INITIAL_DIR=$(pwd)
+# 在脚本开始处保存 menu.sh 的绝对路径
+MENU_SCRIPT=$(readlink -f ./menu.sh)
 
 clear  # 清屏
 # Define colors and styles using tput
@@ -64,8 +64,7 @@ function handle_choice() {
         M|m)
             clear
             echo "${BOLD}${RED} 返回主菜单！ ${RESET}"
-            cd "$INITIAL_DIR"  # 返回初始的工作目录
-            ./menu.sh
+            $MENU_SCRIPT
         ;;
         *)
             clear
