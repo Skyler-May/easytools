@@ -68,19 +68,20 @@ function handle_choice() {
     case $choice in
         1)
             clear
-            echo -e "${BOLD}${RED} website ${RESET}\n"
-            cd easytools/website
+            echo -e "${BOLD}${RED} 站点部署 ${RESET}\n"
+            # 在这里添加选项1的操作
+            cd "$(dirname "$(readlink -f "$0")")/website"  # 这里使用绝对路径
             ./website_menu.sh
         ;;
         2)
             clear
             echo -e "${BOLD}${YELLOW} 选项2 ${RESET}"
-            # 在这里添加选项三的操作
+            # 在这里添加选项2的操作
         ;;
         3)
             clear
             echo -e "${BOLD}${YELLOW} 选项3 ${RESET}"
-            # 在这里添加选项三的操作
+            # 在这里添加选项3的操作
         ;;
         E|e)
             

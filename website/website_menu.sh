@@ -23,7 +23,7 @@ options=(
 
 # Show menu
 function show_menu() {
-    echo -e "======== 菜单 ========\n"
+    echo -e "======== 站点部署 ========\n"
     for i in "${!options[@]}"; do
         if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
             echo -e "${BOLD}${RED}m. ${options[$i]}${RESET}\n"  # 将退出选项标记为红色
@@ -53,9 +53,15 @@ function handle_choice() {
             echo -e "${BOLD}${YELLOW} 选项3 ${RESET}"
             # 在这里添加选项三的操作
         ;;
+        4)
+            clear
+            echo -e "${BOLD}${YELLOW} 开发中... ${RESET}"
+            # 在这里添加选项三的操作
+        ;;
         M|m)
             echo "${BOLD}${RED} 返回主菜单！ ${RESET}"
-            cd easytools
+            cd "$(dirname "$0")"  # 使用相对路径，确保 menu.sh 目录正确
+            cd ..
             ./menu.sh
         ;;
         *)
