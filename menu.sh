@@ -24,8 +24,8 @@ PURPLE=$(tput setaf 5)
 
 RESET=$(tput sgr0)
 
-Define menu options
 # Define menu options
+Define menu options
 options=(
     "${BOLD}${GREEN} 站点部署 >> ${RESET}"
     "${BOLD}${GREEN} XrayR [后端] 部署 >> ${RESET}"
