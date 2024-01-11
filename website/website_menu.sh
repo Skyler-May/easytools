@@ -59,12 +59,14 @@ function handle_choice() {
             # 在这里添加选项三的操作
         ;;
         M|m)
+            clear
             echo "${BOLD}${RED} 返回主菜单！ ${RESET}"
             cd "$(dirname "$0")"  # 使用相对路径，确保 menu.sh 目录正确
             cd ..
             ./menu.sh
         ;;
         *)
+            clear
             echo -e "${BOLD}${RED} 无效选项，请重新选择 ${RESET}"
         ;;
     esac

@@ -84,15 +84,17 @@ function handle_choice() {
             # 在这里添加选项3的操作
         ;;
         E|e)
-            
+            clear
             exit 0
         ;;
         U|u)
+            clear
             echo "${BOLD}${RED} 谢谢使用，再见！ ${RESET}"
             ./easytools/uninstall.sh
             exit 0
         ;;
         *)
+            clear
             echo -e "${BOLD}${RED} 无效选项，请重新选择 ${RESET}"
         ;;
     esac
