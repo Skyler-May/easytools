@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# 在menu.sh开头
+MENU_SCRIPT_PATH=$(dirname "$(readlink -f "$0")")
+
 clear
 echo -e "\033[96m———————————————————————— EasyTools 工具箱 v1.0.0 ——————————————————————————"
 echo "                                                                                "
@@ -70,8 +74,7 @@ function handle_choice() {
             clear
             echo -e "${BOLD}${RED} 站点部署 ${RESET}\n"
             # 在这里添加选项1的操作
-            cd "$(dirname "$(readlink -f "$0")")/website"  # 这里使用绝对路径
-            $MENU_SCRIPT_PATH/website_menu.sh
+            "$WEBSITE_MENU_SCRIPT_PATH"
         ;;
         2)
             clear

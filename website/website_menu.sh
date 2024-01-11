@@ -1,7 +1,10 @@
 #!/bin/bash
 
-# 在脚本开始处保存 menu.sh 的绝对路径
-MENU_SCRIPT=$(readlink -f "$(dirname "$0")/../menu.sh")
+# 获取主目录路径
+MAIN_DIR="$(dirname "$(readlink -f "$0")")"
+
+# 设置其他路径
+MENU_SCRIPT_PATH="$MAIN_DIR/../menu.sh"
 
 clear  # 清屏
 # Define colors and styles using tput
@@ -64,7 +67,7 @@ function handle_choice() {
         M|m)
             clear
             echo "${BOLD}${RED} 返回主菜单！ ${RESET}"
-            $MENU_SCRIPT_PATH/menu.sh
+            MENU_SCRIPT_PATH="$MAIN_DIR/../menu.sh"
         ;;
         *)
             clear
