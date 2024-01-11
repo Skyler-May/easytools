@@ -6,7 +6,8 @@
 git clone https://github.com/Sam-Mey/easytools.git \
     && cd easytools \
     && chmod +x menu.sh \
-    && ln -s /root/easytools/menu.sh /usr/local/bin/et
+    && ln -s /root/easytools/menu.sh /usr/local/bin/et \
+    && cd ..
 ```
 
 ## 再次只需要 `et` 呼出脚本

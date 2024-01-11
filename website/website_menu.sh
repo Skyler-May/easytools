@@ -1,8 +1,38 @@
 #!/bin/bash
-cd /root/easytools
-./menu.sh
+clear  # 清屏
 
+# Define colors and styles using tput
+BOLD=$(tput bold)
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+BLUE=$(tput setaf 4)
+PURPLE=$(tput setaf 5)
 
+RESET=$(tput sgr0)
+
+Define menu options
+# Define menu options
+options=(
+    "${BOLD}${GREEN} 站点相关 >> ${RESET}"
+    "${BOLD}${GREEN} v2board >> ${RESET}"
+    "${BOLD}${GREEN} SSPanel >> ${RESET}"
+    "${BOLD}${GREEN} wordpress >> ${RESET}"
+    "${BOLD}${GREEN} 开发中... >> ${RESET}\n"
+    "${BOLD}${RED}退出${RESET}"
+)
+
+# Show menu
+function show_menu() {
+    echo -e "======== 菜单 ========\n"
+    for i in "${!options[@]}"; do
+        if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
+            echo -e "${BOLD}${RED}0. ${options[$i]}${RESET}\n"  # 将退出选项标记为红色
+        else
+            echo -e "${BOLD}${GREEN}$((i+1)). ${options[$i]}${RESET}"
+        fi
+    done
+}
 
 # Handle user choice
 function handle_choice() {
@@ -27,7 +57,6 @@ function handle_choice() {
                             echo -e "${BOLD}${BLUE}=== V2Board === ${RESET}\n"
                             echo -e "${BOLD}${BLUE} 1. 安装 ${RESET}"
                             echo -e "${BOLD}${BLUE} 2. 更新 ${RESET}"
-                            echo -e "${BOLD}${BLUE} 3. 运行状态 ${RESET}\n"
                             echo -e "${BOLD}${RED} 01. 返回上一级菜单 ${RESET}\n"
                             read -p "${BOLD}${BLUE} 请输入选项编号: ${RESET}" sub_choice
                             # 1-3 菜单
@@ -35,16 +64,13 @@ function handle_choice() {
                                 1)
                                     clear  # 清屏
                                     echo -e "${BOLD}${GREEN} 正在执行安装...${RESET}"
-                                    
+                                    ./v2board/install.sh
                                 ;;
                                 2)
                                     clear  # 清屏
-                                    echo "更新"
+                                    echo "此操作需要在网站根目录下执行"
+                                    ./v2board/update.sh
                                     #
-                                ;;
-                                3)
-                                    clear  # 清屏
-                                    echo "运行状态"
                                 ;;
                                 01)
                                     clear  # 清屏
@@ -98,3 +124,9 @@ function handle_choice() {
         ;;
     esac
 }
+
+# 主循环
+while true; do
+    show_menu
+    handle_choice
+done
