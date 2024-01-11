@@ -3,8 +3,6 @@
 # 获取主目录路径
 MAIN_DIR="$(dirname "$(readlink -f "$0")")"
 
-# 设置其他路径
-MENU_SCRIPT_PATH="$MAIN_DIR/../menu.sh"
 
 clear  # 清屏
 # Define colors and styles using tput

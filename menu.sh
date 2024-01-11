@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# 在menu.sh开头
-MENU_SCRIPT_PATH=$(dirname "$(readlink -f "$0")")
 
 clear
 echo -e "\033[96m———————————————————————— EasyTools 工具箱 v1.0.0 ——————————————————————————"
@@ -31,15 +29,16 @@ RESET=$(tput sgr0)
 
 # Define menu options
 options=(
-    "${BOLD}${GREEN} 站点部署 >> ${RESET}"
-    "${BOLD}${GREEN} XrayR [后端] 部署 >> ${RESET}"
-    "${BOLD}${GREEN} 开发中... >> ${RESET}"
-    "${BOLD}${GREEN} 开发中... >> ${RESET}"
-    "${BOLD}${GREEN} 开发中... >> ${RESET}"
-    "${BOLD}${GREEN} 开发中... >> ${RESET}"
-    "${BOLD}${GREEN} 开发中... >> ${RESET}"
-    "${BOLD}${GREEN} 开发中... >> ${RESET}\n"
+    "${BOLD}${BLUE} 站点部署 >> ${RESET}"
+    "${BOLD}${BLUE} XrayR [后端] 部署 >> ${RESET}"
+    "${BOLD}${BLUE} 开发中... >> ${RESET}"
+    "${BOLD}${BLUE} 开发中... >> ${RESET}"
+    "${BOLD}${BLUE} 开发中... >> ${RESET}"
+    "${BOLD}${BLUE} 开发中... >> ${RESET}"
+    "${BOLD}${BLUE} 开发中... >> ${RESET}"
+    "${BOLD}${BLUE} 开发中... >> ${RESET}\n"
     "${BOLD}${RED} 退出 ${RESET}\n"
+    "${BOLD}${GREEN} 更新 ${RESET}\n"
     "${BOLD}${GRAY} 卸载 ${RESET}\n"
 )
 
@@ -47,10 +46,12 @@ options=(
 function show_menu() {
     echo -e "======== 主菜单 ========\n"
     for i in "${!options[@]}"; do
-        if [[ $i -eq $(( ${#options[@]} - 2 )) ]]; then
-            echo -e "${BOLD}${RED}e. ${options[$i]}${RESET}"  # 将退出选项标记为红色
+        if [[ $i -eq $(( ${#options[@]} - 3 )) ]]; then
+            echo -e "${BOLD}${RED}q. ${options[$i]}${RESET}"  # q 退出选项，标记为红色
+            elif [[ $i -eq $(( ${#options[@]} -2 )) ]]; then
+            echo -e "${BOLD}${GREEN}u. ${options[$i]}${RESET}\n"  # u 更新选项，标记为绿色
             elif [[ $i -eq $(( ${#options[@]} -1 )) ]]; then
-            echo -e "${BOLD}${GRAY}u. ${options[$i]}${RESET}\n"  # 序号为 u 的卸载选项，标记为灰色
+            echo -e "${BOLD}${GRAY}r. ${options[$i]}${RESET}\n"  # r 卸载选项，标记为灰色
         else
             echo -e "${BOLD}${GREEN}$((i+1)). ${options[$i]}${RESET}"
         fi
@@ -86,11 +87,17 @@ function handle_choice() {
             echo -e "${BOLD}${YELLOW} 选项3 ${RESET}"
             # 在这里添加选项3的操作
         ;;
-        E|e)
+        Q|q)
             clear
             exit 0
         ;;
         U|u)
+            clear
+            echo "${BOLD}${RED} 正在拉取分支... ${RESET}"
+            ./easytools/updata.sh
+            exit 0
+        ;;
+        R|r)
             clear
             echo "${BOLD}${RED} 谢谢使用，再见！ ${RESET}"
             ./easytools/uninstall.sh
