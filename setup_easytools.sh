@@ -7,7 +7,10 @@ git clone https://github.com/Sam-Mey/easytools.git
 find easytools -name "*.sh" -exec chmod +x {} \;
 
 # Create a symbolic link for menu.sh
-ln -s /root/easytools/menu.sh /usr/local/bin/et
+ln -s "/root/easytools/menu.sh" "/usr/local/bin/et"
 
 # Run 'et' command
 et
+
+# Delete script after Run 'et'
+find easytools -name "setup_easytools.sh" -exec rm {} \;

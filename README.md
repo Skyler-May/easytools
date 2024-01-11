@@ -3,12 +3,9 @@
 ## 首次安装
 
 ```bash
-git clone https://github.com/Sam-Mey/easytools.git \
-    && find easytools -name "*.sh" -exec chmod +x {} \; \
-    && ln -s /root/easytools/menu.sh /usr/local/bin/et \
-    && et
+git https://raw.githubusercontent.com/Sam-Mey/easytools/main/setup.sh \
+    && chmod +x setup_easytools.sh \
     
 ```
 
 ## 再次只需要 `et` 呼出脚本
-
