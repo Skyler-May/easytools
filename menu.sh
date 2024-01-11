@@ -25,7 +25,6 @@ GRAY=$(tput setaf 0)
 
 RESET=$(tput sgr0)
 
-Define menu options
 # Define menu options
 options=(
     "${BOLD}${GREEN} 站点部署 >> ${RESET}"
@@ -47,11 +46,19 @@ function show_menu() {
         if [[ $i -eq $(( ${#options[@]} - 2 )) ]]; then
             echo -e "${BOLD}${RED}0. ${options[$i]}${RESET}"  # 将退出选项标记为红色
             elif [[ $i -eq $(( ${#options[@]} -1 )) ]]; then
-            echo -e "${BOLD}${GRAY}U. ${RESET}\n"  # 序号为 u 的卸载选项，标记为灰色
+            echo -e "${BOLD}${GRAY}u. ${options[$i]}${RESET}\n"  # 序号为 u 的卸载选项，标记为灰色
         else
             echo -e "${BOLD}${GREEN}$((i+1)). ${options[$i]}${RESET}"
         fi
     done
+    
+    # for i in "${!options[@]}"; do
+    #     if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
+    #         echo -e "${BOLD}${RED}0. ${options[$i]}${RESET}\n"  # 将退出选项标记为红色
+    #     else
+    #         echo -e "${BOLD}${GREEN}$((i+1)). ${options[$i]}${RESET}"
+    #     fi
+    # done
 }
 
 # Handle user choice
