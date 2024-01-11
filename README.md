@@ -4,10 +4,8 @@
 
 ```bash
 git clone https://github.com/Sam-Mey/easytools.git \
-    && cd easytools \
-    && chmod +x menu.sh \
-    && ln -s /root/easytools/menu.sh /usr/local/bin/et \
-    && cd ..
+    && find easytools -name "*.sh" -exec chmod +x {} \; \
+    && ln -s /root/easytools/menu.sh /usr/local/bin/et
 ```
 
 ## 再次只需要 `et` 呼出脚本
