@@ -1,17 +1,12 @@
 # 此脚本 easytools 正在开发中...
 
-## 安装
+## 首次安装
 
 ```bash
 git clone https://github.com/Sam-Mey/easytools.git \
     && cd easytools \
-    && chmod +x menuOptions.sh \
-    && ln -s /root/easytools/menuOptions.sh /usr/local/bin/et
+    && chmod +x menu.sh \
+    && ln -s /root/easytools/menu.sh /usr/local/bin/et
 ```
 
-## 呼出脚本
-
-```bash
-sudo ln -s /usr/local/bin/menuOptions.sh /usr/local/bin/mo
-
-```
+## 再次只需要 `et` 呼出脚本
