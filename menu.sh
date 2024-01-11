@@ -21,6 +21,7 @@ GREEN=$(tput setaf 2)
 YELLOW=$(tput setaf 3)
 BLUE=$(tput setaf 4)
 PURPLE=$(tput setaf 5)
+GRAY=$(tput setaf 7)
 
 RESET=$(tput sgr0)
 
@@ -35,7 +36,8 @@ options=(
     "${BOLD}${GREEN}开发中... >> ${RESET}"
     "${BOLD}${GREEN}开发中... >> ${RESET}"
     "${BOLD}${GREEN}开发中... >> ${RESET}\n"
-    "${BOLD}${RED}退出${RESET}"
+    "${BOLD}${RED}退出${RESET}\n"
+    "${BOLD}${GRAY}卸载${RESET}\n"
 )
 
 # Show menu
@@ -78,8 +80,13 @@ function handle_choice() {
             # 在这里添加选项三的操作
         ;;
         0)
-            echo "${BOLD}${RED} 谢谢使用，再见！ ${RESET}"
+            
             exit 0
+        ;;
+        88)
+            echo "${BOLD}${RED} 谢谢使用，再见！ ${RESET}"
+            rm -rf easytools
+            rm /usr/local/bin/et
         ;;
         *)
             echo -e "${BOLD}${RED} 无效选项，请重新选择 ${RESET}"
