@@ -5,7 +5,9 @@
 ```bash
 git clone https://github.com/Sam-Mey/easytools.git \
     && find easytools -name "*.sh" -exec chmod +x {} \; \
-    && ln -s /root/easytools/menu.sh /usr/local/bin/et
+    && ln -s /root/easytools/menu.sh /usr/local/bin/et \
+    && et
+    
 ```
 
 ## 再次只需要 `et` 呼出脚本
