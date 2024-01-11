@@ -3,16 +3,15 @@
 ## 安装
 
 ```bash
-git clone https://github.com/Sam-Mey/easytools.git >> /usr/local/bin/
+git clone https://github.com/Sam-Mey/easytools.git \
+    && cd easytools \
+    && chmod +x menuOptions.sh \
+    && ln -s /root/easytools/menuOptions.sh /usr/local/bin/et
 ```
 
 ## 呼出脚本
 
 ```bash
-# 设置
-vim ./bashrc
-# 路径
-命令() {
-    /your/file/path/script.sh
-}
+sudo ln -s /usr/local/bin/menuOptions.sh /usr/local/bin/mo
+
 ```
