@@ -3,7 +3,7 @@
 # 引入配置
 . config.sh
 
-function website_menu(){
+function website_menu () {
     source "$WEBSITE_MENU_SCRIPT_PATH"
 }
 
@@ -73,7 +73,7 @@ function handle_choice() {
             clear
             echo -e "${BOLD}${RED} 站点部署 ${RESET}\n"
             # 在这里添加选项1的操作
-            "$WEBSITE_MENU_SCRIPT_PATH"
+            website_menu
         ;;
         2)
             clear
