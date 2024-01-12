@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# 引入配置
+. config.sh
+
+function show_website_menu(){
+    source "$WEBSITE_MENU_SCRIPT_PATH"
+}
 
 clear
 echo -e "\033[96m———————————————————————— EasyTools 工具箱 v1.0.0 ——————————————————————————"
