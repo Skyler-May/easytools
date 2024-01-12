@@ -3,7 +3,7 @@
 # 引入配置
 . config.sh
 
-function show_website_menu(){
+function website_menu(){
     source "$WEBSITE_MENU_SCRIPT_PATH"
 }
 
@@ -62,14 +62,6 @@ function show_menu() {
             echo -e "${BOLD}${GREEN}$((i+1)). ${options[$i]}${RESET}"
         fi
     done
-    
-    # for i in "${!options[@]}"; do
-    #     if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
-    #         echo -e "${BOLD}${RED}0. ${options[$i]}${RESET}\n"  # 将退出选项标记为红色
-    #     else
-    #         echo -e "${BOLD}${GREEN}$((i+1)). ${options[$i]}${RESET}"
-    #     fi
-    # done
 }
 
 # Handle user choice

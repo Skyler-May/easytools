@@ -1,8 +1,11 @@
 #!/bin/bash
 
-# 获取主目录路径
-MAIN_DIR="$(dirname "$(readlink -f "$0")")"
+# 引入配置
+. config.sh
 
+function website_menu(){
+    source "$MENU_SCRIPT_PATH"
+}
 
 clear  # 清屏
 # Define colors and styles using tput
@@ -65,7 +68,7 @@ function handle_choice() {
         M|m)
             clear
             echo "${BOLD}${RED} 返回主菜单！ ${RESET}"
-            MENU_SCRIPT_PATH="$MAIN_DIR/../menu.sh"
+            break  # 退出循环，返回到调用的主菜单
         ;;
         *)
             clear
