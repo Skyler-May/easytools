@@ -1,9 +1,9 @@
 #!/bin/bash
 
+clear
+
 # 设置版本号
 VERSION="v1.1.3"
-
-clear
 
 # 打印当前工作目录
 echo "Current working directory: $(pwd)"
