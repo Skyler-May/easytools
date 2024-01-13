@@ -35,6 +35,8 @@ echo_color "green" "1. CentOS"
 echo
 echo_color "green" "2. Ubuntu/Debian"
 echo
+echo_color "green" "0. 退出"
+echo
 echo_color "green" "———————————— 系统选择 ————————————"
 echo
 echo
