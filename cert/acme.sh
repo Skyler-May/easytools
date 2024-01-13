@@ -49,6 +49,7 @@ echo
 read -p $'\033[33m 请输入序号选择系统: \033[0m' choice
 
 # 根据选择的系统进行操作
+
 case $choice in
     1)  # CentOS
         echo_color "green" "正在安装必要的依赖和获取证书..."

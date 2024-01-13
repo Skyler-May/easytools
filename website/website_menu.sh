@@ -24,10 +24,10 @@ RESET=$(tput sgr0)
 
 # Define menu options
 options=(
-    "${BOLD}${GREEN} v2board >> ${RESET}"
-    "${BOLD}${GREEN} SSPanel >> ${RESET}"
-    "${BOLD}${GREEN} wordpress >> ${RESET}"
-    "${BOLD}${GREEN} 开发中... >> ${RESET}\n"
+    "${BOLD}${PURPLE} v2board >> ${RESET}"
+    "${BOLD}${PURPLE} SSPanel >> ${RESET}"
+    "${BOLD}${PURPLE} wordpress >> ${RESET}"
+    "${BOLD}${GRAY} 开发中... >> ${RESET}\n"
     "${BOLD}${RED} 主菜单 ${RESET}"
 )
 
@@ -36,9 +36,9 @@ function show_website_menu() {
     echo -e "======== 站点部署 ========\n"
     for i in "${!options[@]}"; do
         if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
-            echo -e "${BOLD}${RED}m. ${options[$i]}${RESET}\n"  # 将退出选项标记为红色
+            echo -e "${BOLD}${RED}m. ${options[$i]}${RESET}\n"  # 将返回选项标记为红色
         else
-            echo -e "${BOLD}${GREEN}$((i+1)). ${options[$i]}${RESET}"
+            echo -e "${BOLD}${PURPLE}$((i+1)). ${options[$i]}${RESET}"
         fi
     done
 }
