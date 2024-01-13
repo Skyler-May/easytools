@@ -60,6 +60,7 @@ function handle_choice() {
             # 在这里添加选项2的操作
             cd "$root_dir"
             warp [option] [license]
+            exit 0
         ;;
         M|m)
             clear
