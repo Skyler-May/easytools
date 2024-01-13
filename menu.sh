@@ -2,7 +2,6 @@
 
 clear
 
-
 # 打印当前工作目录
 echo "Current working directory: $(pwd)"
 
@@ -12,7 +11,6 @@ cd "$(dirname "${BASH_SOURCE[0]}")" || exit
 # 打印当前工作目录
 echo "Current working directory after cd: $(pwd)"
 
-
 # 引入配置
 . /root/easytools/config.sh
 
@@ -21,9 +19,7 @@ echo "SCRIPT_DIR: $SCRIPT_DIR"
 echo "MENU_SCRIPT_PATH: $MENU_SCRIPT_PATH"
 echo "WEBSITE_MENU_SCRIPT_PATH: $WEBSITE_MENU_SCRIPT_PATH"
 
-
-
-echo -e "\033[96m———————————————————————— EasyTools 工具箱 v1.0.0 ——————————————————————————"
+echo -e "\033[96m—————————————————————————— EasyTools 工具箱 v1.0.0 ————————————————————————————"
 echo "                                                                                "
 echo " ▓█████  ▄▄▄        ██████ ▓██   ██▓ ███████▓ ▒█████   ▒█████   ██▓      ██████ "
 echo " ▓█   ▀ ▒████▄    ▒██    ▒  ▒██  ██▒▓  ██▒ ▓▒▒██▒  ██▒▒██▒  ██▒▓██▒    ▒██    ▒ "
@@ -107,12 +103,13 @@ function handle_choice() {
         U|u)
             clear
             echo "${BOLD}${GREEN} 正在拉取分支... ${RESET}"
-            ./easytools/updata.sh
+            "$UPDATA_SCRIPT_PATH"
         ;;
+        
         R|r)
             clear
             echo "${BOLD}${RED} 谢谢使用，再见！ ${RESET}"
-            ./easytools/uninstall.sh
+            "$UNINSTALL_SCRIPT_PATH"
             exit 0
         ;;
         *)
