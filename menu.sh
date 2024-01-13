@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# 设置版本号
+VERSION="v1.1.2"
+
 clear
 
 # 打印当前工作目录
@@ -19,7 +22,7 @@ echo "SCRIPT_DIR: $SCRIPT_DIR"
 echo "MENU_SCRIPT_PATH: $MENU_SCRIPT_PATH"
 echo "WEBSITE_MENU_SCRIPT_PATH: $WEBSITE_MENU_SCRIPT_PATH"
 
-echo -e "\033[96m—————————————————————————— EasyTools 工具箱 v1.1.0 ————————————————————————————"
+echo -e "\033[96m—————————————————————————— EasyTools 工具箱 $VERSION ————————————————————————————"
 echo "                                                                                "
 echo " ▓█████  ▄▄▄        ██████ ▓██   ██▓ ███████▓ ▒█████   ▒█████   ██▓      ██████ "
 echo " ▓█   ▀ ▒████▄    ▒██    ▒  ▒██  ██▒▓  ██▒ ▓▒▒██▒  ██▒▒██▒  ██▒▓██▒    ▒██    ▒ "
