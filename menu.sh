@@ -19,7 +19,7 @@ echo "SCRIPT_DIR: $SCRIPT_DIR"
 echo "MENU_SCRIPT_PATH: $MENU_SCRIPT_PATH"
 echo "WEBSITE_MENU_SCRIPT_PATH: $WEBSITE_MENU_SCRIPT_PATH"
 
-echo -e "\033[96m—————————————————————————— EasyTools 工具箱 v1.1.12 ————————————————————————————"
+echo -e "\033[96m—————————————————————————— EasyTools 工具箱 v1.1.0 ————————————————————————————"
 echo "                                                                                "
 echo " ▓█████  ▄▄▄        ██████ ▓██   ██▓ ███████▓ ▒█████   ▒█████   ██▓      ██████ "
 echo " ▓█   ▀ ▒████▄    ▒██    ▒  ▒██  ██▒▓  ██▒ ▓▒▒██▒  ██▒▒██▒  ██▒▓██▒    ▒██    ▒ "
