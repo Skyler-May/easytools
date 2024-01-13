@@ -1,28 +1,35 @@
 #!/bin/bash
 
-# 切换到脚本所在目录
-cd "$(dirname "${BASH_SOURCE[0]}")"
+# update.sh
 
-# 检查是否存在旧的 'easytools' 文件夹
-if [ -d "easytools" ]; then
-    echo "发现旧版本 'easytools' 文件夹，将进行备份并删除..."
-    mv easytools "easytools_backup_$(date '+%Y%m%d_%H%M%S')"
-fi
+# 1. 克隆远程仓库
+echo "Cloning the repository..."
+git clone https://github.com/Sam-Mey/easytools.git tmp_easytools
 
-# 从仓库获取最新的更改
-git clone https://github.com/Sam-Mey/easytools.git
+# 2. 拉取远程仓库的最新变更
+echo "Fetching the latest changes..."
+git --git-dir=tmp_easytools/.git --work-tree=tmp_easytools fetch origin
 
-# 找到所有 .sh 文件并添加可执行权限
-find easytools -name "*.sh" -exec chmod +x {} \;
+# 3. 重置本地仓库到最新的提交
+echo "Resetting local repository to the latest commit..."
+git --git-dir=tmp_easytools/.git --work-tree=tmp_easytools reset --hard origin/master
 
-# 创建符号链接之前检查是否存在，如果存在则删除
-if [ -e "/usr/local/bin/et" ]; then
-    echo "删除已存在的 '/usr/local/bin/et'..."
-    rm /usr/local/bin/et
-fi
+# 4. 将所有 .sh 文件添加执行权限
+echo "Adding execute permissions to .sh files..."
+find tmp_easytools -name "*.sh" -exec chmod +x {} \;
 
-# 创建一个新的符号链接
-ln -s "$(pwd)/easytools/menu.sh" "/usr/local/bin/et"
+# 5. 创建符号链接，使得 'et' 命令指向 menu.sh
+echo "Creating symbolic link for menu.sh..."
+ln -sf "/root/easytools/menu.sh" "/usr/local/bin/et"
 
-# 运行 'et' 命令（确保 'et' 在这一步之前已经设置好）
+# 6. 用最新内容替换当前目录的文件
+echo "Replacing current content with updated content..."
+rsync -av --exclude='.git' tmp_easytools/ /root/easytools/
+
+# 7. 清理临时目录
+echo "Cleaning up temporary directory..."
+rm -rf tmp_easytools
+
+# 8. 运行 'et' 命令（确保 'et' 在这一步之前已经设置好）
+echo "Running 'et' command..."
 et
