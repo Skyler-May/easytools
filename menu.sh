@@ -100,8 +100,9 @@ function handle_choice() {
         ;;
         3)
             clear
-            echo -e "${BOLD}${YELLOW} XrayR 部署 ${RESET}"
+            echo -e "${BOLD}${YELLOW} warp 解锁 ${RESET}"
             # 在这里添加选项3的操作
+            "$WARP_SCRIPT_PATH"
         ;;
         Q|q)
             clear
