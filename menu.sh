@@ -85,7 +85,7 @@ function handle_choice() {
     case $choice in
         1)
             clear
-            echo -e "${BOLD}${RED} 站点部署 ${RESET}\n"
+            echo -e "${BOLD}${YELLOW} 站点部署 ${RESET}\n"
             # 在这里添加选项1的操作
             "$WEBSITE_MENU_SCRIPT_PATH"
         ;;
