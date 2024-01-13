@@ -3,14 +3,16 @@
 # 切换到脚本所在目录
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
-# 检查是否存在旧的 'easytools' 文件夹
-if [ -d "easytools" ]; then
-    echo "发现旧版本 'easytools' 文件夹，将进行备份并删除..."
-    mv easytools "easytools_backup_$(date '+%Y%m%d_%H%M%S')"
+# 检查是否存在 'easytools' 文件夹，如果不存在，则进行克隆
+if [ ! -d "easytools" ]; then
+    echo "未找到 'easytools' 文件夹，将进行克隆..."
+    git clone https://github.com/Sam-Mey/easytools.git
+else
+    echo "发现 'easytools' 文件夹，将进行更新..."
+    cd easytools
+    git pull
+    cd ..
 fi
-
-# 从仓库获取最新的更改
-git clone https://github.com/Sam-Mey/easytools.git
 
 # 找到所有 .sh 文件并添加可执行权限
 find easytools -name "*.sh" -exec chmod +x {} \;
