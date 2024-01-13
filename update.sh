@@ -27,11 +27,11 @@ rm -rf tmp_easytools
 et
 
 # 打印调试信息
-echo "Cloning the repository..."
-echo "Fetching the latest changes..."
-echo "Resetting local repository to the latest commit..."
-echo "Adding execute permissions to .sh files..."
-echo "Creating symbolic link for menu.sh..."
-echo "Replacing current content with updated content..."
-echo "Cleaning up temporary directory..."
-echo "Running 'et' command..."
+# echo "Cloning the repository..."
+# echo "Fetching the latest changes..."
+# echo "Resetting local repository to the latest commit..."
+# echo "Adding execute permissions to .sh files..."
+# echo "Creating symbolic link for menu.sh..."
+# echo "Replacing current content with updated content..."
+# echo "Cleaning up temporary directory..."
+# echo "Running 'et' command..."
