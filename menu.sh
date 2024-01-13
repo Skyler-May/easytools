@@ -54,7 +54,7 @@ RESET=$(tput sgr0)
 options=(
     "${BOLD}${BLUE} 站点部署 >> ${RESET}"
     "${BOLD}${BLUE} 证书申请 >> ${RESET}"
-    "${BOLD}${GRAY} XR 部署 >> ${RESET}"
+    "${BOLD}${BLUE} XR 部署 >> ${RESET}"
     "${BOLD}${GRAY} 开发中... >> ${RESET}"
     "${BOLD}${GRAY} 开发中... >> ${RESET}"
     "${BOLD}${GRAY} 开发中... >> ${RESET}"
