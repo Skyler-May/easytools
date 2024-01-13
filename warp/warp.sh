@@ -27,7 +27,7 @@ RESET=$(tput sgr0)
 # Define menu options
 options=(
     "${BOLD}${PURPLE} 安装 ${RESET}"
-    "${BOLD}${PURPLE} 更新 ${RESET}"
+    "${BOLD}${PURPLE} 更新 ${RESET}\n"
     "${BOLD}${RED} 主菜单 ${RESET}"
 )
 
@@ -56,7 +56,7 @@ function handle_choice() {
         ;;
         2)
             clear
-            echo -e "${BOLD}${YELLOW} 更新 ${RESET}"
+            echo -e "${BOLD}${YELLOW} 呼出 warp ${RESET}"
             # 在这里添加选项2的操作
             warp [option] [license]
         ;;
