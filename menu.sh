@@ -92,7 +92,7 @@ function handle_choice() {
         ;;
         2)
             clear
-            echo -e "${BOLD}${YELLOW} 选项2 ${RESET}"
+            echo -e "${BOLD}${YELLOW} 证书申请 ${RESET}"
             # 在这里添加选项2的操作
             "$ACME_SCRIPT_PATH"
         ;;

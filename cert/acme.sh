@@ -29,13 +29,13 @@ function echo_color {
 # 提示选择系统
 echo
 echo
-echo_color "green" "-----------------------------------系统选择------------------------------------"
+echo_color "green" "———————————— 系统选择 ————————————"
 echo
-echo_color "green"                                  "1. CentOS"
+echo_color "green" "1. CentOS"
 echo
-echo_color "green"                                  "2. Ubuntu/Debian"
+echo_color "green" "2. Ubuntu/Debian"
 echo
-echo_color "green" "-----------------------------------系统选择------------------------------------"
+echo_color "green" "———————————— 系统选择 ————————————"
 echo
 echo
 
@@ -61,7 +61,7 @@ case $choice in
         
         # 安装证书到路径
         acme.sh --installcert -d "$your_domain" --ecc --key-file /root/cert/cert.key --fullchain-file /root/cert/cert.crt
-        echo_color "green" "证书申请成功，并已安装到 root 目录下；您可以手动更改使用位置！"
+        echo_color "green" "证书申请成功，并已安装到 root/cert 目录下；您可以手动更改使用位置！"
     ;;
     
     2)  # Ubuntu/Debian
