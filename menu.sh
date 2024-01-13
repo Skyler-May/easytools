@@ -50,7 +50,7 @@ RESET=$(tput sgr0)
 # Define menu options
 options=(
     "${BOLD}${BLUE} 站点部署 >> ${RESET}"
-    "${BOLD}${BLUE} XrayR [后端] 部署 >> ${RESET}"
+    "${BOLD}${BLUE} 证书申请 >> ${RESET}"
     "${BOLD}${BLUE} 开发中... >> ${RESET}"
     "${BOLD}${BLUE} 开发中... >> ${RESET}"
     "${BOLD}${BLUE} 开发中... >> ${RESET}"
@@ -93,6 +93,7 @@ function handle_choice() {
             clear
             echo -e "${BOLD}${YELLOW} 选项2 ${RESET}"
             # 在这里添加选项2的操作
+            "$ACME_SCRIPT_PATH"
         ;;
         3)
             clear
