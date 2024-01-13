@@ -9,7 +9,7 @@ cd "$(dirname "$0")"
 SCRIPT_DIR="/root/easytools/cert"
 
 # 引入配置
-. "/root/easytools/cert/config.sh"
+. /root/easytools/config.sh
 
 # Define colors and styles using tput
 BOLD=$(tput bold)
