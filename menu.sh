@@ -49,14 +49,14 @@ RESET=$(tput sgr0)
 
 # Define menu options
 options=(
-    "${BOLD}${BLUE} 站点部署 >> ${RESET}"
-    "${BOLD}${BLUE} 证书申请 >> ${RESET}"
-    "${BOLD}${BLUE} 开发中... >> ${RESET}"
-    "${BOLD}${BLUE} 开发中... >> ${RESET}"
-    "${BOLD}${BLUE} 开发中... >> ${RESET}"
-    "${BOLD}${BLUE} 开发中... >> ${RESET}"
-    "${BOLD}${BLUE} 开发中... >> ${RESET}"
-    "${BOLD}${BLUE} 开发中... >> ${RESET}\n"
+    "${BOLD}${GREEN} 站点部署 >> ${RESET}"
+    "${BOLD}${GREEN} 证书申请 >> ${RESET}"
+    "${BOLD}${GREEN} 开发中... >> ${RESET}"
+    "${BOLD}${GREEN} 开发中... >> ${RESET}"
+    "${BOLD}${GREEN} 开发中... >> ${RESET}"
+    "${BOLD}${GREEN} 开发中... >> ${RESET}"
+    "${BOLD}${GREEN} 开发中... >> ${RESET}"
+    "${BOLD}${GREEN} 开发中... >> ${RESET}\n"
     "${BOLD}${RED} 退出 ${RESET}"
     "${BOLD}${GREEN} 更新 ${RESET}"
     "${BOLD}${GRAY} 卸载 ${RESET}"
