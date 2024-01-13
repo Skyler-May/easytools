@@ -63,7 +63,6 @@ case $choice in
         acme.sh --installcert -d "$your_domain" --ecc --key-file /root/cert/cert.key --fullchain-file /root/cert/cert.crt
         echo_color "green" "证书申请成功，并已安装到 root/cert 目录下；您可以手动更改使用位置！"
     ;;
-    
     2)  # Ubuntu/Debian
         echo_color "green" "正在安装必要的依赖和获取证书..."
         apt-get install -y socat
@@ -84,9 +83,12 @@ case $choice in
         acme.sh --installcert -d "$your_domain" --ecc --key-file /root/cert/cert.key --fullchain-file /root/cert/cert.crt
         echo_color "green" "证书申请成功，并已安装到 root/cert 目录下；您可以手动更改使用位置！"
     ;;
-    
-    *)  # 无效选择
-        echo_color "red" "错误：无效的系统选择!"
-        exit 1
+    0)
+        echo_color "green" "返回"
+        break
+    ;;
+    *)
+        clear
+        echo -e "${BOLD}${RED} 无效选项，请重新选择 ${RESET}"
     ;;
 esac

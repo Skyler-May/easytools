@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 设置版本号
-VERSION="v1.1.2"
+VERSION="v1.1.3"
 
 clear
 
