@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 # 切换到脚本所在目录
 cd "$(dirname "${BASH_SOURCE[0]}")"
