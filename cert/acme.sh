@@ -1,102 +1,77 @@
 #!/bin/bash
 
-# root权限
-# root_need() {
-#     if [[ $EUID -ne 0 ]]; then
-#         echo -e "\033[31m 错误:该脚本必须以 root 身份运行! \033[0m" 1>&2
-#         exit 1
-#     fi
-# }
+clear  # 清屏
+
+# 进入脚本所在目录
+cd "$(dirname "$0")"
+
+# 保存脚本所在目录的路径
+SCRIPT_DIR="/root/easytools/cert"
 
 # 引入配置
-. "/root/cert/config.sh"
+. "/root/easytools/cert/config.sh"
 
-# 如果不存在，则创建 cert 文件夹
-mkdir -p /root/cert
-
-# 定义字体颜色函数
-function echo_color {
-    local color=$1
-    shift
-    local message=$@
-    case $color in
-        "green")
-        echo -e "\e[92m$message\e[0m" ;;  # 绿色
-        "red")
-        echo -e "\e[91m$message\e[0m" ;;  # 红色
-        *)
-        echo "$message" ;;
-    esac
-}
+# Define colors and styles using tput
+BOLD=$(tput bold)
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+BLUE=$(tput setaf 4)
+PURPLE=$(tput setaf 5)
+GRAY=$(tput setaf 0)
 
 RESET=$(tput sgr0)
 
-# 提示选择系统
-echo
-echo
-echo_color "green" "———————————— 系统选择 ————————————"
-echo
-echo_color "green" "1. CentOS"
-echo
-echo_color "green" "2. Ubuntu/Debian"
-echo
-echo_color "green" "0. 返回"
-echo
-echo_color "green" "———————————— 系统选择 ————————————"
-echo
-echo
+# Define menu options
+options=(
+    "${BOLD}${PURPLE} CentOS ${RESET}"
+    "${BOLD}${PURPLE} ubuntu/Debian ${RESET}"
+    "${BOLD}${RED} 主菜单 ${RESET}"
+)
 
-read -p $'\033[33m 请输入序号选择系统: \033[0m' choice
+# Show show_acme
+function show_acme() {
+    echo -e "======== 证书申请 ========\n"
+    for i in "${!options[@]}"; do
+        if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
+            echo -e "${BOLD}${RED}m. ${options[$i]}${RESET}\n"  # 将返回选项标记为红色
+        else
+            echo -e "${BOLD}${PURPLE}$((i+1)). ${options[$i]}${RESET}"
+        fi
+    done
+}
 
-# 根据选择的系统进行操作
+# Handle user choice
+function handle_choice() {
+    read -p "${BOLD}${BLUE} 请输入选项编号: ${RESET}" choice
+    # 1-1 菜单
+    case $choice in
+        1)
+            clear
+            echo -e "${BOLD}${YELLOW} CentOS ${RESET}"
+            # 在这里添加选项三的操作
+        ;;
+        2)
+            clear
+            echo -e "${BOLD}${YELLOW} Ubuntu/Debian ${RESET}"
+            # 在这里添加选项三的操作
+        ;;
+        M|m)
+            clear
+            echo "${BOLD}${RED} 返回主菜单！ ${RESET}"
+        ;;
+        *)
+            clear
+            echo -e "${BOLD}${RED} 无效选项，请重新选择 ${RESET}"
+        ;;
+    esac
+}
 
-case $choice in
-    1)  # CentOS
-        echo_color "green" "正在安装必要的依赖和获取证书..."
-        yum install -y socat
-        curl https://get.acme.sh | sh
-        ln -s /root/.acme.sh/acme.sh /usr/local/bin/acme.sh
-        
-        # 用户注册
-        echo_color "green" "请输入您的邮箱地址："
-        read email_address
-        acme.sh --register-account -m "$email_address"
-        
-        # 开始申请证书
-        echo_color "green" "请输入您的域名："
-        read your_domain
-        acme.sh --issue -d "$your_domain" --standalone -k ec-256
-        
-        # 安装证书到路径
-        acme.sh --installcert -d "$your_domain" --ecc --key-file /root/cert/cert.key --fullchain-file /root/cert/cert.crt
-        echo_color "green" "证书申请成功，并已安装到 root/cert 目录下；您可以手动更改使用位置！"
-    ;;
-    2)  # Ubuntu/Debian
-        echo_color "green" "正在安装必要的依赖和获取证书..."
-        apt-get install -y socat
-        curl https://get.acme.sh | sh
-        ln -s /root/.acme.sh/acme.sh /usr/local/bin/acme.sh
-        
-        # 用户注册
-        echo_color "green" "请输入您的邮箱地址："
-        read email_address
-        acme.sh --register-account -m "$email_address"
-        
-        # 开始申请证书
-        echo_color "green" "请输入您的域名："
-        read your_domain
-        acme.sh --issue -d "$your_domain" --standalone -k ec-256
-        
-        # 安装证书到路径（默认 root 目录）
-        acme.sh --installcert -d "$your_domain" --ecc --key-file /root/cert/cert.key --fullchain-file /root/cert/cert.crt
-        echo_color "green" "证书申请成功，并已安装到 root/cert 目录下；您可以手动更改使用位置！"
-    ;;
-    0)
-        echo_color "green" "返回"
-        break
-    ;;
-    *)
-        clear
-        echo -e "red" "无效选项，请重新选择 ${RESET}"
-    ;;
-esac
+# 主循环
+while true; do
+    show_acme
+    handle_choice
+    if [[ $choice == "m" || $choice == "M" ]]; then
+        break  # 退出循环，返回到调用的主菜单
+    fi
+done
