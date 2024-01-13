@@ -1,13 +1,16 @@
 #!/bin/bash
 
-# 引入配置
-. config.sh
-
-function website_menu(){
-    source "$MENU_SCRIPT_PATH"
-}
-
 clear  # 清屏
+
+# 进入脚本所在目录
+cd "$(dirname "$0")"
+
+# 保存脚本所在目录的路径
+SCRIPT_DIR="/root/easytools/website"
+
+# 引入配置
+. "/root/easytools/config.sh"
+
 # Define colors and styles using tput
 BOLD=$(tput bold)
 RED=$(tput setaf 1)
@@ -28,8 +31,8 @@ options=(
     "${BOLD}${RED} 主菜单 ${RESET}"
 )
 
-# Show menu
-function show_menu() {
+# Show website_menu
+function show_website_menu() {
     echo -e "======== 站点部署 ========\n"
     for i in "${!options[@]}"; do
         if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
@@ -68,7 +71,6 @@ function handle_choice() {
         M|m)
             clear
             echo "${BOLD}${RED} 返回主菜单！ ${RESET}"
-            break  # 退出循环，返回到调用的主菜单
         ;;
         *)
             clear
@@ -79,6 +81,7 @@ function handle_choice() {
 
 # 主循环
 while true; do
-    show_menu
+    show_website_menu
     handle_choice
+    break
 done
