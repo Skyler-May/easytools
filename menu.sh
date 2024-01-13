@@ -74,7 +74,7 @@ function show_menu() {
             elif [[ $i -eq $(( ${#options[@]} -1 )) ]]; then
             echo -e "${BOLD}${GRAY}r. ${options[$i]}${RESET}\n"  # r 卸载选项，标记为灰色
         else
-            echo -e "${BOLD}${GREEN}$((i+1)). ${options[$i]}${RESET}"
+            echo -e "${BOLD}${BLUE}$((i+1)). ${options[$i]}${RESET}"
         fi
     done
 }
