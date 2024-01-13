@@ -68,10 +68,10 @@ function handle_choice() {
             echo -e "${BOLD}${YELLOW} 开发中... ${RESET}"
             # 在这里添加选项三的操作
         ;;
-        # M|m)
-        #     clear
-        #     echo "${BOLD}${RED} 返回主菜单！ ${RESET}"
-        # ;;
+        M|m)
+            clear
+            echo "${BOLD}${RED} 返回主菜单！ ${RESET}"
+        ;;
         *)
             clear
             echo -e "${BOLD}${RED} 无效选项，请重新选择 ${RESET}"
@@ -84,7 +84,6 @@ while true; do
     show_website_menu
     handle_choice
     if [[ $choice == "m" || $choice == "M" ]]; then
-        echo "${BOLD}${RED} 返回主菜单！ ${RESET}"
         break  # 退出循环，返回到调用的主菜单
     fi
 done
