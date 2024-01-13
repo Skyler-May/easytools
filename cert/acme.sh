@@ -29,6 +29,8 @@ function echo_color {
     esac
 }
 
+RESET=$(tput sgr0)
+
 # 提示选择系统
 echo
 echo
@@ -94,6 +96,6 @@ case $choice in
     ;;
     *)
         clear
-        echo -e "${BOLD}${RED} 无效选项，请重新选择 ${RESET}"
+        echo -e "red" "无效选项，请重新选择 ${RESET}"
     ;;
 esac
