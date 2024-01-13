@@ -16,4 +16,6 @@ et
 sleep 5
 
 # Delete script after Run 'et'
-find / -name "setup_easytools.sh" -exec rm {} \;
+# find / -name "setup_easytools.sh" -exec rm {} \;
+cd "$root_dir"
+rm -rf setup_easytools.sh
