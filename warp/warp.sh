@@ -58,6 +58,7 @@ function handle_choice() {
             clear
             echo -e "${BOLD}${YELLOW} 呼出 warp ${RESET}"
             # 在这里添加选项2的操作
+            cd "$root_dir"
             warp [option] [license]
         ;;
         M|m)
