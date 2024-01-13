@@ -83,5 +83,8 @@ function handle_choice() {
 while true; do
     show_website_menu
     handle_choice
-    break
+    if [[ $choice == "m" || $choice == "M" ]]; then
+        echo "${BOLD}${RED} 返回主菜单！ ${RESET}"
+        break  # 退出循环，返回到调用的主菜单
+    fi
 done
