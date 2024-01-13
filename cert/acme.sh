@@ -25,7 +25,7 @@ RESET=$(tput sgr0)
 # Define menu options
 options=(
     "${BOLD}${PURPLE} CentOS ${RESET}"
-    "${BOLD}${PURPLE} ubuntu/Debian ${RESET}"
+    "${BOLD}${PURPLE} ubuntu/Debian ${RESET}\n"
     "${BOLD}${RED} 主菜单 ${RESET}"
 )
 
@@ -49,12 +49,15 @@ function handle_choice() {
         1)
             clear
             echo -e "${BOLD}${YELLOW} CentOS ${RESET}"
-            # 在这里添加选项三的操作
+            # 在这里添加选项1的操作
+            "$CENTOS_ACME_SCRIPT_PATH"
+            
         ;;
         2)
             clear
             echo -e "${BOLD}${YELLOW} Ubuntu/Debian ${RESET}"
-            # 在这里添加选项三的操作
+            # 在这里添加选项2的操作
+            "$UBUNTU_ACME_SCRIPT_PATH"
         ;;
         M|m)
             clear
