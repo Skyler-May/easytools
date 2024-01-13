@@ -17,10 +17,11 @@ echo "Current working directory after cd: $(pwd)"
 # 引入配置
 . /root/easytools/config.sh
 
-# 打印调试信息
-echo "SCRIPT_DIR: $SCRIPT_DIR"
-echo "MENU_SCRIPT_PATH: $MENU_SCRIPT_PATH"
-echo "WEBSITE_MENU_SCRIPT_PATH: $WEBSITE_MENU_SCRIPT_PATH"
+# # 打印调试信息
+# echo "SCRIPT_DIR: $SCRIPT_DIR"
+# echo "MENU_SCRIPT_PATH: $MENU_SCRIPT_PATH"
+# echo "WEBSITE_MENU_SCRIPT_PATH: $WEBSITE_MENU_SCRIPT_PATH"
+# echo "ACME_SCRIPT_PATH: $ACME_SCRIPT_PATH"
 
 echo -e "\033[96m—————————————————————————— EasyTools 工具箱 $VERSION ————————————————————————————"
 echo "                                                                                "
@@ -49,8 +50,8 @@ RESET=$(tput sgr0)
 
 # Define menu options
 options=(
-    "${BOLD}${GREEN} 站点部署 >> ${RESET}"
-    "${BOLD}${GREEN} 证书申请 >> ${RESET}"
+    "${BOLD}${BLUE} 站点部署 >> ${RESET}"
+    "${BOLD}${BLUE} 证书申请 >> ${RESET}"
     "${BOLD}${GRAY} 开发中... >> ${RESET}"
     "${BOLD}${GRAY} 开发中... >> ${RESET}"
     "${BOLD}${GRAY} 开发中... >> ${RESET}"
