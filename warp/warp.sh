@@ -27,7 +27,7 @@ RESET=$(tput sgr0)
 # Define menu options
 options=(
     "${BOLD}${PURPLE} 安装 ${RESET}"
-    "${BOLD}${PURPLE} 更新 ${RESET}\n"
+    "${BOLD}${PURPLE} 呼出 warp ${RESET}\n"
     "${BOLD}${RED} 主菜单 ${RESET}"
 )
 
