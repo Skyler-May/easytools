@@ -8,6 +8,9 @@
 #     fi
 # }
 
+# 引入配置
+. "/root/cert/config.sh"
+
 # 如果不存在，则创建 cert 文件夹
 mkdir -p /root/cert
 
@@ -35,7 +38,7 @@ echo_color "green" "1. CentOS"
 echo
 echo_color "green" "2. Ubuntu/Debian"
 echo
-echo_color "green" "0. 退出"
+echo_color "green" "0. 返回"
 echo
 echo_color "green" "———————————— 系统选择 ————————————"
 echo
