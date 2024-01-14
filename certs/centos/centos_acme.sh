@@ -30,5 +30,5 @@ read your_domain
 acme.sh --issue -d "$your_domain" --standalone -k ec-256
 
 # 安装证书到路径
-acme.sh --installcert -d "$your_domain" --ecc --key-file /root/cert/cert.key --fullchain-file /root/cert/cert.crt
-echo -e "${BOLD}${GREEN} 证书申请成功，并已安装到 root/cert 目录下；您可以手动更改使用位置！${RESET}"
+acme.sh --installcert -d "$your_domain" --ecc --key-file /root/certs/certs.key --fullchain-file /root/certs/certs.crt
+echo -e "${BOLD}${GREEN} 证书申请成功，并已安装到 root/certs 目录下；您可以手动更改使用位置！${RESET}"

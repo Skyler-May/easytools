@@ -6,7 +6,7 @@ clear  # 清屏
 cd "$(dirname "$0")"
 
 # 保存脚本所在目录的路径
-SCRIPT_DIR="/root/easytools/cert"
+SCRIPT_DIR="/root/easytools/certs"
 
 # 引入配置
 . /root/easytools/config.sh
