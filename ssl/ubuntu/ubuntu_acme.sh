@@ -29,6 +29,13 @@ echo -e "${BOLD}${YELLOW} 请输入您的域名："
 read your_domain
 acme.sh --issue -d "$your_domain" --standalone -k ec-256
 
-# 安装证书到路径（默认 root 目录）
+# 确认目录是否存在？
+mkdir -p /root/certs
+if [ $? -ne 0 ]; then
+    echo "Failed to create /root/certs directory."
+    exit 1
+fi
+
+# 安装证书到路径（默认 root/certs 目录）
 acme.sh --installcert -d "$your_domain" --ecc --key-file /root/certs/certs.key --fullchain-file /root/certs/certs.crt
 echo -e "${BOLD}${YELLOW} 证书申请成功，并已安装到 root/certs 目录下；您可以手动更改使用位置！${RESET}"
