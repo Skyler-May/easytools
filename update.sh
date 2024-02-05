@@ -1,29 +1,36 @@
 #!/bin/bash
 
-# update.sh
+# 保存当前目录
+current_dir=$(pwd)
 
-# 1. 克隆远程仓库
+# 克隆远程仓库
 git clone https://github.com/Sam-Mey/easytools.git tmp_easytools
 
-# 2. 拉取远程仓库的最新变更
-git --git-dir=tmp_easytools/.git --work-tree=tmp_easytools fetch origin
+# 切换到/easytools目录
+cd /easytools || exit
 
-# 3. 重置本地仓库到最新的提交
-git --git-dir=tmp_easytools/.git --work-tree=tmp_easytools reset --hard origin/master
+# 拉取远程仓库的最新变更
+git fetch origin
 
-# 4. 将所有 .sh 文件添加执行权限
-find tmp_easytools -name "*.sh" -exec chmod +x {} \;
+# 重置本地仓库到最新的提交
+git reset --hard origin/master
 
-# 5. 创建符号链接，使得 'et' 命令指向 menu.sh
+# 将所有 .sh 文件添加执行权限
+find . -name "*.sh" -exec chmod +x {} \;
+
+# 创建符号链接，使得 'et' 命令指向 menu.sh
 ln -sf "/easytools/menu.sh" "/usr/local/bin/et"
 
-# 6. 用最新内容替换当前目录的文件
-rsync -av --exclude='.git' tmp_easytools/ /easytools/
+# 用最新内容替换当前目录的文件
+rsync -av --exclude='.git' tmp_easytools/ .
 
-# 7. 清理临时目录
+# 切换回原始目录
+cd "$current_dir" || exit
+
+# 清理临时目录
 rm -rf tmp_easytools
 
-# 8. 运行 'et' 命令（确保 'et' 在这一步之前已经设置好）
+# 运行 'et' 命令（确保 'et' 在这一步之前已经设置好）
 et
 
 # 打印调试信息
