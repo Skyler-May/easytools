@@ -70,6 +70,7 @@ function handle_choice() {
         R|r)
             clear
             echo "${BOLD}${GRAY} 删除所有容器及网络 ${RESET}"
+            "$DELETE_CONTAINER_NETWORK_SCRIPT_PATH"
         ;;
         *)
             clear
