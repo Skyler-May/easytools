@@ -6,10 +6,10 @@ clear
 cd "$(dirname "$0")"
 
 # 保存脚本所在目录的路径
-SCRIPT_DIR="/root/easytools/warp" # 换为实际名称
+SCRIPT_DIR="/easytools/warp" # 换为实际名称
 
 # 引入配置
-. "/root/easytools/config.sh"
+. "/easytools/config.sh"
 
 # Define colors and styles using tput
 BOLD=$(tput bold)
@@ -63,7 +63,7 @@ function handle_choice() {
         ;;
         M|m)
             clear
-            echo "${BOLD}${RED} 返回主菜单！ ${RESET}"
+            echo -e "${BOLD}${RED} 返回主菜单！ ${RESET}"
         ;;
         *)
             clear
