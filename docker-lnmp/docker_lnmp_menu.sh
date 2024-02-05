@@ -29,7 +29,7 @@ options=(
     "${BOLD}${PURPLE} 安装 ${RESET}"
     "${BOLD}${PURPLE} 容器状态 ${RESET}\n"
     "${BOLD}${RED} 返回主菜单 ${RESET}"
-    "${BOLD}${GRAY}  删除所有容器及网络 ${RESET}"
+    "${BOLD}${GRAY} 删除所有容器及网络 ${RESET}"
 )
 
 # Show 替换为实际名称
