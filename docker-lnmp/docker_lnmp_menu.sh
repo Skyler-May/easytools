@@ -60,18 +60,18 @@ function handle_choice() {
         ;;
         2)
             clear
-            echo -e "${BOLD}${YELLOW} 查看容器状态 ${RESET}"
+            echo -e "${BOLD}${YELLOW} 容器状态 ${RESET}"
             docker ps -a
         ;;
         3)
             clear
-            echo -e "${BOLD}${YELLOW} 查看镜像/网络 ${RESET}"
+            echo -e "${BOLD}${YELLOW} 镜像/网络 ${RESET}"
             docker images
             docker network ls
         ;;
         4)
             clear
-            echo -e "${BOLD}${YELLOW} 查看容器日志 ${RESET}"
+            echo -e "${BOLD}${YELLOW} 容器日志 ${RESET}"
             cd /docker-lnmp/www/sites
             "$CHECK_CONTAINER_LOGS_SCRIPT_PATH"
         ;;
