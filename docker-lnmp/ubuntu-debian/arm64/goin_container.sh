@@ -30,7 +30,8 @@ options=(
     "${BOLD}${PURPLE} 进入 MariaDB 容器 ${RESET}"
     "${BOLD}${PURPLE} 进入 PHP 容器 ${RESET}"
     "${BOLD}${PURPLE} 进入 Redis 容器 ${RESET}"
-    "${BOLD}${PURPLE} 进入 phpMyAdmin 容器 ${RESET}"
+    "${BOLD}${PURPLE} 进入 phpMyAdmin 容器 ${RESET}\n"
+    
     "${BOLD}${RED} 上一级菜单 ${RESET}"
 )
 
@@ -61,7 +62,7 @@ function handle_choice() {
             clear
             echo -e "${BOLD}${YELLOW} 您正处于 MariaDB 容器内部 ${RESET}"
             "$DOCKER_COMPOSE_WORKDIR_SCRIPT_PATH"
-            docker exec -it sites-phpmyadmin-1 /bin/sh
+            docker exec -it sites-mariadb-1 /bin/sh
         ;;
         2)
             clear
