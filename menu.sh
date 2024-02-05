@@ -50,9 +50,9 @@ echo -e "\033[96m    ░  ░      ░  ░      ░   ░ ░                  
 echo -e "\033[96m                            ░ ░                                                 \033[0m"
 echo -e "\033[96m                                                                                \033[0m"
 echo -e "${BOLD}${RED} 温馨提示：${RESET}\n"
-echo -e "${PURPLE}       此脚本仅支持 Ubuntu Debian arm64 系统; ${RESET}"
-echo -e "${PURPLE}       amd 及其他系统敬请期待... ${RESET}"
-echo -e "${PURPLE}       安装完成后，再次使用只需键入 'et' 即可呼出脚本 ${RESET}"
+echo -e "${CYAN}       此脚本仅支持 Ubuntu Debian arm64 系统; ${RESET}"
+echo -e "${CYAN}       amd 及其他系统敬请期待... ${RESET}"
+echo -e "${CYAN}       安装完成后，再次使用只需键入 'et' 即可呼出脚本 ${RESET}"
 
 # Define menu options
 options=(
