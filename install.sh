@@ -9,7 +9,7 @@ git clone https://github.com/Sam-Mey/easytools.git
 find easytools -name "*.sh" -exec chmod +x {} \;
 
 # Create a symbolic link for menu.sh
-ln -s "/root/easytools/menu.sh" "/usr/local/bin/et"
+ln -s "/easytools/menu.sh" "/usr/local/bin/et"
 
 # Run 'et' command (make sure 'et' is set up before this point)
 et
