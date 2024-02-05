@@ -28,8 +28,8 @@ RESET=$(tput sgr0)
 options=(
     "${BOLD}${PURPLE} 申请证书 ssl ${RESET}"
     "${BOLD}${PURPLE} 安装环境 Docker-LNMP ${RESET}"
-    "${BOLD}${PURPLE} 部署 SSPanel ${RESET}"
     "${BOLD}${PURPLE} 配置 Nginx ${RESET}"
+    "${BOLD}${PURPLE} 部署 SSPanel ${RESET}"
     "${BOLD}${PURPLE} 站点初始化 ${RESET}\n"
     
     "${BOLD}${PURPLE} 更新 SSPanel ${RESET}"
@@ -62,21 +62,22 @@ function handle_choice() {
         2)
             clear
             echo -e "${BOLD}${YELLOW} 步骤2.安装环境... ${RESET}"
-            "$"
+            "$STEP2_INSTALL_DOCKER_LNMP_SCRIPT_PATH"
         ;;
         3)
             clear
-            echo -e "${BOLD}${YELLOW} 步骤3.部署 sspanel... ${RESET}"
+            echo -e "${BOLD}${YELLOW} 步骤3.将 Nginx 配置写入容器中... ${RESET}"
             "$"
         ;;
         4)
             clear
-            echo -e "${BOLD}${YELLOW} 步骤4.将 Nginx 配置写入容器中... ${RESET}"
-            "$"
+            echo -e "${BOLD}${YELLOW} 步骤4.部署 sspanel... ${RESET}"
+            "$GET_SSPANEL_VERSION_SCRIPT_PATH"
+            "$STEP4_INSTALL_SSPANEL_SCRIPT_PATH"
         ;;
-        4)
+        5)
             clear
-            echo -e "${BOLD}${YELLOW} 步骤5.正在客制化站点... ${RESET}"
+            echo -e "${BOLD}${YELLOW} 步骤5.初始化站点... ${RESET}"
             "$"
         ;;
         10)
