@@ -12,10 +12,9 @@ find /easytools -name "*.sh" -exec chmod +x {} \;
 ln -s "/easytools/menu.sh" "/usr/local/bin/et"
 
 # Run 'et' command (make sure 'et' is set up before this point)
-et
+# et
 
 # Check if it's not being run for removal
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     rm -rf /root/install.sh
 fi
-
