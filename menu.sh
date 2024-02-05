@@ -36,6 +36,8 @@ echo "    ░     ░   ▒   ░  ░  ░   ▒ ▒ ░░    ░      ░ ░
 echo "    ░  ░      ░  ░      ░   ░ ░                  ░ ░      ░ ░      ░  ░      ░  "
 echo "                            ░ ░                                                 "
 echo "                                                                                "
+echo "温馨提示: 此脚本仅支持 Ubuntu Debian arm64 系统"
+echo "amd 及其他系统敬请期待..."
 
 # Define colors and styles using tput
 BOLD=$(tput bold)
@@ -83,9 +85,7 @@ function show_menu() {
 
 # Handle user choice
 function handle_choice() {
-    read -p "${BOLD}${BLUE} 请输入选项编号: ${RESET}\n\n\n" choice
-    echo -e "${BOLD}${RED} 温馨提示: 此脚本仅支持 Ubuntu Debian arm64 系统 ${RESET}"
-    echo -e "${BOLD}${RED} amd 及其他系统敬请期待... ${RESET}"
+    read -p "${BOLD}${BLUE} 请输入选项编号: ${RESET}" choice
     case $choice in
         1)
             clear
