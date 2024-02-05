@@ -27,8 +27,8 @@ RESET=$(tput sgr0)
 # Define menu options
 options=(
     "${BOLD}${PURPLE} 安装 ${RESET}"
-    "${BOLD}${PURPLE} 容器状态 ${RESET}"
-    "${BOLD}${RED} 主菜单 ${RESET}"
+    "${BOLD}${PURPLE} 容器状态 ${RESET}\n"
+    "${BOLD}${RED} 返回主菜单 ${RESET}"
 )
 
 # Show 替换为实际名称
