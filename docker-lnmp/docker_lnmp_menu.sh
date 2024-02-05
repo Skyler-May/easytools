@@ -52,6 +52,7 @@ function handle_choice() {
             clear
             echo -e "${BOLD}${YELLOW} 安装 ${RESET}"
             # 在这里添加选项1的操作
+            "$INSTALL_DOCKER_LNMP_SCRIPT_PATH"
         ;;
         2)
             clear
