@@ -26,7 +26,12 @@ RESET=$(tput sgr0)
 
 # Define menu options
 options=(
-    "${BOLD}${PURPLE} Docker-LNMP 部署 SSPanel ${RESET}"
+    "${BOLD}${PURPLE} 申请证书 ssl ${RESET}"
+    "${BOLD}${PURPLE} 安装环境 Docker-LNMP ${RESET}"
+    "${BOLD}${PURPLE} 部署 SSPanel ${RESET}"
+    "${BOLD}${PURPLE} 配置 Nginx ${RESET}"
+    "${BOLD}${PURPLE} 站点客制化 ${RESET}"
+    
     "${BOLD}${PURPLE} 更新 SSPanel ${RESET}"
     "${BOLD}${PURPLE} 查看 SSPanel 当前版本 ${RESET}\n"
     "${BOLD}${RED} 上一级菜单！ ${RESET}"
@@ -34,7 +39,7 @@ options=(
 
 # Show 替换为实际名称
 function show_sspanel_menu() {
-    echo -e "${BOLD}${PURPLE}======== 部署 sspanel ========${RESET}\n" # 换为实际名称
+    echo -e "${BOLD}${PURPLE}======== Docker-LNMP 部署 SSPanel ========${RESET}\n" # 换为实际名称
     for i in "${!options[@]}"; do
         if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
             echo -e "${BOLD}${RED}m. ${options[$i]}${RESET}\n"  # 将返回选项标记为红色
@@ -51,16 +56,36 @@ function handle_choice() {
     case $choice in
         1)
             clear
-            echo -e "${BOLD}${YELLOW} 开始部署 sspanel... ${RESET}"
-            "$INSTALL_SSPANEL_SCRIPT_PATH"
+            echo -e "${BOLD}${YELLOW} 步骤1.申请证书... ${RESET}"
+            "$STEP1_SSL_SCRIPT_PATH"
         ;;
         2)
+            clear
+            echo -e "${BOLD}${YELLOW} 步骤2.安装环境... ${RESET}"
+            "$"
+        ;;
+        3)
+            clear
+            echo -e "${BOLD}${YELLOW} 步骤3.部署 sspanel... ${RESET}"
+            "$"
+        ;;
+        4)
+            clear
+            echo -e "${BOLD}${YELLOW} 步骤4.将 Nginx 配置写入容器中... ${RESET}"
+            "$"
+        ;;
+        4)
+            clear
+            echo -e "${BOLD}${YELLOW} 步骤5.正在客制化站点... ${RESET}"
+            "$"
+        ;;
+        10)
             clear
             echo -e "${BOLD}${YELLOW} 正在更新 sspanel... ${RESET}"
             "$GET_SSPANEL_VERSION_SCRIPT_PATH" # 首先获取官方最新版本号
             "$UPDATE_SSPANEL_SCRIPT_PATH"  # 执行更新
         ;;
-        2)
+        11)
             clear
             echo -e "${BOLD}${YELLOW} 当前版本 ${RESET}"
             # 在这里添加选项2的操作

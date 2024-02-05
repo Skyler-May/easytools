@@ -30,28 +30,28 @@ echo "" >> update_sspanel.sh
 echo "# 使用最新版本号和数据库版本号更新 SSPanel-Uim" >> update_sspanel.sh
 echo "bash update.sh $latest_release_version $database_version" >> update_sspanel.sh
 
-# # 生成 install_sspanel.sh 文件
-# echo "#!/bin/bash" > install_sspanel.sh
-# echo "" >> install_sspanel.sh
-# echo "# 进入目录" >> install_sspanel.sh
-# echo "cd /docker-lnmp/www/sites/sspanel" >> install_sspanel.sh
-# echo "" >> install_sspanel.sh
-# echo "# 使用指定版本号克隆 SSPanel-Uim 仓库" >> install_sspanel.sh
-# echo "git clone -b $latest_release_version https://github.com/Anankke/SSPanel-Uim.git ." >> install_sspanel.sh
+# 生成 step2_install_sspanel.sh 文件
+echo "#!/bin/bash" > step2_install_sspanel.sh
+echo "" >> step2_install_sspanel.sh
+echo "# 进入目录" >> step2_install_sspanel.sh
+echo "cd /docker-lnmp/www/sites/sspanel" >> step2_install_sspanel.sh
+echo "" >> step2_install_sspanel.sh
+echo "# 使用指定版本号克隆 SSPanel-Uim 仓库" >> step2_install_sspanel.sh
+echo "git clone -b $latest_release_version https://github.com/Anankke/SSPanel-Uim.git ." >> step2_install_sspanel.sh
 
-# 追加 install_sspanel.sh 文件内容
-echo "# 进入目录" >> install_sspanel.sh
-echo "cd /docker-lnmp/www/sites/sspanel" >> install_sspanel.sh
-echo "" >> install_sspanel.sh
-echo "# 使用指定版本号克隆 SSPanel-Uim 仓库" >> install_sspanel.sh
-echo "git clone -b $latest_release_version https://github.com/Anankke/SSPanel-Uim.git ." >> install_sspanel.sh
+# # 追加 step2_install_sspanel.sh 文件内容
+# echo "# 进入目录" >> step2_install_sspanel.sh
+# echo "cd /docker-lnmp/www/sites/sspanel" >> step2_install_sspanel.sh
+# echo "" >> step2_install_sspanel.sh
+# echo "# 使用指定版本号克隆 SSPanel-Uim 仓库" >> step2_install_sspanel.sh
+# echo "git clone -b $latest_release_version https://github.com/Anankke/SSPanel-Uim.git ." >> step2_install_sspanel.sh
 
 # 输出结果
 echo "已将版本信息写入 update_sspanel.sh 文件:"
 cat update_sspanel.sh
 
-# echo "已将安装信息写入 install_sspanel.sh 文件:"
-# cat install_sspanel.sh
+echo "已将安装信息写入 step2_install_sspanel.sh 文件:"
+cat step2_install_sspanel.sh
 
-echo "已将版本信息追加至 install_sspanel.sh 文件:"
-tail -n 3 install_sspanel.sh  # 显示 install_sspanel.sh 文件的最后3行，确保追加成功
+# echo "已将版本信息追加至 step2_install_sspanel.sh 文件:"
+# tail -n 3 step2_install_sspanel.sh  # 显示 step2_install_sspanel.sh 文件的最后3行，确保追加成功
