@@ -78,7 +78,7 @@ function handle_choice() {
         ;;
         M|m)
             clear
-            echo "${BOLD}${RED} [Docker LNMP] 菜单 ${RESET}"
+            echo "${BOLD}${RED} [Docker LNMP] ${RESET}"
         ;;
         *)
             clear
