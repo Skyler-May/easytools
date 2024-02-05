@@ -36,13 +36,13 @@ def write_to_config_sh(file_paths, output_file="config.sh"):
         config_file.write("\n")
         config_file.write("# 其他配置...\n")
         config_file.write("\n")
-        config_file.write("# 定义路径\n")
+        config_file.write("# 打印路径调试信息\n")
 
         # 将所有路径写一个打印调试信息并放在最后
         for path in file_paths:
             script_name = os.path.basename(path).split(".")[0]
             script_variable = f'{script_name.upper()}_SCRIPT_PATH: ${script_name.upper()}_SCRIPT_PATH'
-            config_file.write(f'echo "{script_variable}"\n')
+            config_file.write(f'# echo "{script_variable}"\n') # 开发模式请将 '# echo' 前面的 '#' 号去掉
 
 if __name__ == "__main__":
     easytools_directory = os.getcwd()  # 获取当前工作目录作为easytools项目的路径

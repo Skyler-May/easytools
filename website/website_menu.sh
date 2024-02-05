@@ -26,11 +26,11 @@ RESET=$(tput sgr0)
 
 # Define menu options
 options=(
-    "${BOLD}${PURPLE} SSPanel >> ${RESET}"
-    "${BOLD}${PURPLE} v2board >> ${RESET}"
-    "${BOLD}${PURPLE} wordpress >> ${RESET}"
+    "${BOLD}${PURPLE} 部署 sspanel >> ${RESET}"
+    "${BOLD}${PURPLE} 部署 v2board >> ${RESET}"
+    "${BOLD}${PURPLE} 部署 wordpress >> ${RESET}"
     "${BOLD}${GRAY} 开发中... >> ${RESET}\n"
-    "${BOLD}${RED} 主菜单 ${RESET}"
+    "${BOLD}${RED} 返回主菜单 ${RESET}"
 )
 
 # Show website_menu
@@ -48,20 +48,19 @@ function show_website_menu() {
 # Handle user choice
 function handle_choice() {
     read -p "${BOLD}${BLUE} 请输入选项编号: ${RESET}" choice
-    # 1-1 菜单
     case $choice in
         1)
             clear
             echo -e "${BOLD}${PURPLE} 部署 sspanel ${RESET}"
-            "$INSTALL_SSPANEL_SCRIPT_PATH"
+            "$SSPANEL_MENU_SCRIPT_PATH"
         ;;
         2)
             clear
-            echo -e "${BOLD}${PURPLE} 更新 ${RESET}"
+            echo -e "${BOLD}${PURPLE} 部署 v2board ${RESET}"
         ;;
         3)
             clear
-            echo -e "${BOLD}${PURPLE} 查看当前版本 ${RESET}"
+            echo -e "${BOLD}${PURPLE} 部署 wordpress ${RESET}"
             # 在这里添加选项三的操作
         ;;
         4)
