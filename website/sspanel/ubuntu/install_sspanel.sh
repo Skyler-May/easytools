@@ -7,6 +7,7 @@ check_port() {
     port=$1
     if timeout 1 bash -c "</dev/tcp/$host/$port" >/dev/null 2>&1; then
         echo "Port $port is open"
+        "$SSL_MENU_SCRIPT_PATH"
     else
         echo "Port $port is closed"
         read -p "Do you want to open port $port? (y/n): " choice
