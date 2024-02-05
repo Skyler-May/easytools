@@ -26,9 +26,9 @@ RESET=$(tput sgr0)
 
 # Define menu options
 options=(
-    "${BOLD}${PURPLE} 部署 sspanel ${RESET}"
-    "${BOLD}${PURPLE} 更新 ${RESET}"
-    "${BOLD}${PURPLE} 查看当前版本 ${RESET}\n"
+    "${BOLD}${PURPLE} Docker-LNMP 部署 SSPanel ${RESET}"
+    "${BOLD}${PURPLE} 更新 SSPanel ${RESET}"
+    "${BOLD}${PURPLE} 查看 SSPanel 当前版本 ${RESET}\n"
     "${BOLD}${RED} 上一级菜单！ ${RESET}"
 )
 
