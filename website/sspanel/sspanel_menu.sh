@@ -30,7 +30,7 @@ options=(
     "${BOLD}${PURPLE} 安装环境 Docker-LNMP ${RESET}"
     "${BOLD}${PURPLE} 部署 SSPanel ${RESET}"
     "${BOLD}${PURPLE} 配置 Nginx ${RESET}"
-    "${BOLD}${PURPLE} 站点客制化 ${RESET}"
+    "${BOLD}${PURPLE} 站点初始化 ${RESET}\n"
     
     "${BOLD}${PURPLE} 更新 SSPanel ${RESET}"
     "${BOLD}${PURPLE} 查看 SSPanel 当前版本 ${RESET}\n"
@@ -39,7 +39,7 @@ options=(
 
 # Show 替换为实际名称
 function show_sspanel_menu() {
-    echo -e "${BOLD}${PURPLE}======== Docker-LNMP 部署 SSPanel ========${RESET}\n" # 换为实际名称
+    echo -e "${BOLD}${PURPLE}======== 安装步骤 ========${RESET}\n" # 换为实际名称
     for i in "${!options[@]}"; do
         if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
             echo -e "${BOLD}${RED}m. ${options[$i]}${RESET}\n"  # 将返回选项标记为红色

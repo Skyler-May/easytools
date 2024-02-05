@@ -26,9 +26,9 @@ RESET=$(tput sgr0)
 
 # Define menu options
 options=(
-    "${BOLD}${PURPLE} 部署 sspanel >> ${RESET}"
-    "${BOLD}${PURPLE} 部署 v2board >> ${RESET}"
-    "${BOLD}${PURPLE} 部署 wordpress >> ${RESET}"
+    "${BOLD}${PURPLE} Docker LNMP 部署 sspanel >> ${RESET}"
+    "${BOLD}${PURPLE} Docker LNMP 部署 v2board >> ${RESET}"
+    "${BOLD}${PURPLE} Docker LNMP 部署 wordpress >> ${RESET}"
     "${BOLD}${GRAY} 开发中... >> ${RESET}\n"
     "${BOLD}${RED} 返回主菜单 ${RESET}"
 )
