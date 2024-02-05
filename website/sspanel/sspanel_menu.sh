@@ -34,7 +34,7 @@ options=(
 
 # Show 替换为实际名称
 function show_sspanel_menu() {
-    echo -e "======== 部署 sspanel ========\n" # 换为实际名称
+    echo -e "${BOLD}${PURPLE}======== 部署 sspanel ========${RESET}\n" # 换为实际名称
     for i in "${!options[@]}"; do
         if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
             echo -e "${BOLD}${RED}m. ${options[$i]}${RESET}\n"  # 将返回选项标记为红色
@@ -51,13 +51,14 @@ function handle_choice() {
     case $choice in
         1)
             clear
-            echo -e "${BOLD}${YELLOW} 部署 ${RESET}"
-            # 在这里添加选项1的操作
+            echo -e "${BOLD}${YELLOW} 开始部署 sspanel... ${RESET}"
+            "$INSTALL_SSPANEL_SCRIPT_PATH"
         ;;
         2)
             clear
-            echo -e "${BOLD}${YELLOW} 更新 ${RESET}"
-            # 在这里添加选项2的操作
+            echo -e "${BOLD}${YELLOW} 正在更新 sspanel... ${RESET}"
+            "$GET_VERSION_SCRIPT_PATH" # 首先获取官方最新版本号
+            "$UPDATE_SSPANEL_SCRIPT_PATH"  # 执行更新
         ;;
         2)
             clear
@@ -66,7 +67,7 @@ function handle_choice() {
         ;;
         M|m)
             clear
-            echo "${BOLD}${RED} 上一级菜单！ ${RESET}"
+            echo "${BOLD}${RED} [站点部署] ${RESET}"
         ;;
         *)
             clear
