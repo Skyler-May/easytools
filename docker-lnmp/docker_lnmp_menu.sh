@@ -1,16 +1,5 @@
 #!/bin/bash
 
-# 检查系统是否安装了 Docker
-check_docker_installed() {
-    if command -v docker &> /dev/null; then
-        echo "Docker 已安装"
-        return 0  # 返回 0 表示已安装
-    else
-        echo "Docker 未安装"
-        return 1  # 返回 1 表示未安装
-    fi
-}
-
 clear
 
 # 进入脚本所在目录
