@@ -54,19 +54,6 @@ echo -e "${RED}       此脚本仅支持 Ubuntu Debian arm64 系统; ${RESET}"
 echo -e "${RED}       amd 及其他系统敬请期待... ${RESET}"
 echo -e "${RED}       安装完成后，再次使用只需键入 'et' 即可呼出脚本 ${RESET}"
 
-# # Define colors and styles using tput
-# BOLD=$(tput bold)
-# GRAY=$(tput setaf 0)
-# RED=$(tput setaf 1)
-# GREEN=$(tput setaf 2)
-# YELLOW=$(tput setaf 3)
-# BLUE=$(tput setaf 4)
-# PURPLE=$(tput setaf 5)
-# CYAN=$(tput setaf 6)
-# WHITE=$(tput setaf 7)
-
-# RESET=$(tput sgr0)
-
 # Define menu options
 options=(
     "${BOLD}${BLUE} 站点部署 >> ${RESET}"
