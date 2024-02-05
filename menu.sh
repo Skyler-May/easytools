@@ -36,7 +36,7 @@ WHITE=$(tput setaf 7)
 
 RESET=$(tput sgr0)
 
-echo -e "\033[96m—————————————————————————— EasyTools 工具箱 $VERSION ————————————————————————————"
+echo -e "\033[96m—————————————————————————— EasyTools 工具箱 $VERSION ————————————————————————————\033[0m"
 echo -e "\033[96m                                                                                \033[0m"
 echo -e "\033[96m ▓█████  ▄▄▄        ██████ ▓██   ██▓ ███████▓ ▒█████   ▒█████   ██▓      ██████ \033[0m"
 echo -e "\033[96m ▓█   ▀ ▒████▄    ▒██    ▒  ▒██  ██▒▓  ██▒ ▓▒▒██▒  ██▒▒██▒  ██▒▓██▒    ▒██    ▒ \033[0m"
@@ -50,9 +50,9 @@ echo -e "\033[96m    ░  ░      ░  ░      ░   ░ ░                  
 echo -e "\033[96m                            ░ ░                                                 \033[0m"
 echo -e "\033[96m                                                                                \033[0m"
 echo -e "${BOLD}${RED} 温馨提示：${RESET}\n"
-echo -e "\033[91m       此脚本仅支持 Ubuntu Debian arm64 系统; \033[0m"
-echo -e "\033[91m       amd 及其他系统敬请期待...\033[0m\n"
-echo -e "\033[91m       安装完成后，再次使用只需键入 'et' 即可呼出脚本 \033[0m"
+echo -e "${RED}       此脚本仅支持 Ubuntu Debian arm64 系统; ${RESET}"
+echo -e "${RED}       amd 及其他系统敬请期待... ${RESET}"
+echo -e "${RED}       安装完成后，再次使用只需键入 'et' 即可呼出脚本 ${RESET}"
 
 # # Define colors and styles using tput
 # BOLD=$(tput bold)
