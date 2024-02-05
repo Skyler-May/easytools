@@ -37,5 +37,5 @@ if [ $? -ne 0 ]; then
 fi
 
 # 安装证书到路径（默认 root/certs 目录）
-acme.sh --installcert -d "$your_domain" --ecc --key-file /root/certs/certs.key --fullchain-file /root/certs/certs.crt
+acme.sh --installcert -d "$your_domain" --ecc --key-file /root/certs/private.key --fullchain-file /root/certs/certificate.crt
 echo -e "${BOLD}${YELLOW} 证书申请成功，并已安装到 root/certs 目录下；您可以手动更改使用位置！${RESET}"
