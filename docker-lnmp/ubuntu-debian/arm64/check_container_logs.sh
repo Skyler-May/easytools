@@ -53,27 +53,27 @@ function handle_choice() {
     case $choice in
         1)
             clear
-            echo -e "${BOLD}${YELLOW} 查看 Nginx 日志 ${RESET}"
+            echo -e "${BOLD}${YELLOW} Nginx 日志 ${RESET}"
             docker logs sites-nginx-1
         ;;
         2)
             clear
-            echo -e "${BOLD}${YELLOW} 查看 MariaDB 日志 ${RESET}"
+            echo -e "${BOLD}${YELLOW} MariaDB 日志 ${RESET}"
             docker logs sites-mariadb-1
         ;;
         3)
             clear
-            echo -e "${BOLD}${YELLOW}查看 PHP 日志 ${RESET}"
+            echo -e "${BOLD}${YELLOW}PHP 日志 ${RESET}"
             docker logs sites-php-1
         ;;
         4)
             clear
-            echo -e "${BOLD}${YELLOW} 查看 Redis 日志 ${RESET}"
+            echo -e "${BOLD}${YELLOW} Redis 日志 ${RESET}"
             docker logs sites-redis-1
         ;;
         5)
             clear
-            echo -e "${BOLD}${YELLOW} 查看 phpMyAdmin 日志 ${RESET}"
+            echo -e "${BOLD}${YELLOW} phpMyAdmin 日志 ${RESET}"
             docker logs sites-phpmyadmin-1
         ;;
         M|m)
