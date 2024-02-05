@@ -96,7 +96,7 @@ function handle_choice() {
             clear
             echo -e "${BOLD}${YELLOW} 证书申请 ${RESET}"
             # 在这里添加选项2的操作
-            "$ACME_SCRIPT_PATH"
+            "$SSL_MENU_SCRIPT_PATH"
         ;;
         3)
             clear
