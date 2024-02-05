@@ -55,31 +55,26 @@ function handle_choice() {
         1)
             clear
             echo -e "${BOLD}${YELLOW} 您正处于 Nginx 容器内部 ${RESET}"
-            "$DOCKER_COMPOSE_WORKDIR_SCRIPT_PATH"
             docker exec -it sites-nginx-1 /bin/sh
         ;;
         2)
             clear
             echo -e "${BOLD}${YELLOW} 您正处于 MariaDB 容器内部 ${RESET}"
-            "$DOCKER_COMPOSE_WORKDIR_SCRIPT_PATH"
             docker exec -it sites-mariadb-1 /bin/sh
         ;;
-        2)
+        3)
             clear
             echo -e "${BOLD}${YELLOW} 您正处于 PHP 容器内部 ${RESET}"
-            "$DOCKER_COMPOSE_WORKDIR_SCRIPT_PATH"
             docker exec -it sites-php-1 /bin/sh
         ;;
-        2)
+        4)
             clear
             echo -e "${BOLD}${YELLOW} 您正处于 Redis 容器内部 ${RESET}"
-            "$DOCKER_COMPOSE_WORKDIR_SCRIPT_PATH"
             docker exec -it sites-redis-1 /bin/sh
         ;;
-        2)
+        5)
             clear
             echo -e "${BOLD}${YELLOW} 您正处于 phpMyAdmin 容器内部 ${RESET}"
-            "$DOCKER_COMPOSE_WORKDIR_SCRIPT_PATH"
             docker exec -it sites-phpmyadmin-1 /bin/sh
         ;;
         M|m)

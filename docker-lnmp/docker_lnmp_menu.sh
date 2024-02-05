@@ -90,13 +90,11 @@ function handle_choice() {
         4)
             clear
             echo -e "${BOLD}${YELLOW} 容器日志 ${RESET}"
-            "$DOCKER_COMPOSE_WORKDIR_SCRIPT_PATH"
             "$CHECK_CONTAINER_LOGS_SCRIPT_PATH"
         ;;
         5)
             clear
             echo -e "${BOLD}${YELLOW} 进入容器 ${RESET}"
-            "$DOCKER_COMPOSE_WORKDIR_SCRIPT_PATH"
             "$GOIN_CONTAINER_SCRIPT_PATH"
         ;;
         # 5)
