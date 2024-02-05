@@ -4,7 +4,8 @@
 result=$(find / -type d -name "easytools" 2>/dev/null)
 
 if [ -n "$result" ]; then
-    echo "Found 'easytools' folder(s) at:"
+    # Found 'easytools' folder(s) at:
+    echo "发现 'easytools' 文件夹（目录）在："
     echo "$result"
     
     # 删除 'easytools' 文件夹

@@ -13,7 +13,7 @@ def get_sh_file_paths(directory):
 
 def write_to_config_sh(file_paths, output_file="config.sh"):
     # 移动SCRIPT_DIR的定义到函数内部
-    SCRIPT_DIR = "/root/easytools"
+    SCRIPT_DIR = "/easytools"
     
     with open(output_file, "w", encoding="utf-8") as config_file:
         config_file.write("#!/bin/bash\n\n")
