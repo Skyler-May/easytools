@@ -26,8 +26,8 @@ RESET=$(tput sgr0)
 
 # Define menu options
 options=(
-    "${BOLD}${PURPLE} v2board >> ${RESET}"
     "${BOLD}${PURPLE} SSPanel >> ${RESET}"
+    "${BOLD}${PURPLE} v2board >> ${RESET}"
     "${BOLD}${PURPLE} wordpress >> ${RESET}"
     "${BOLD}${GRAY} 开发中... >> ${RESET}\n"
     "${BOLD}${RED} 主菜单 ${RESET}"
@@ -52,22 +52,22 @@ function handle_choice() {
     case $choice in
         1)
             clear
-            echo -e "${BOLD}${YELLOW} 选项1 ${RESET}"
-            # 在这里添加选项三的操作
+            echo -e "${BOLD}${PURPLE} 部署 sspanel ${RESET}"
+            "$INSTALL_SSPANEL_SCRIPT_PATH"
         ;;
         2)
             clear
-            echo -e "${BOLD}${YELLOW} 选项2 ${RESET}"
+            echo -e "${BOLD}${PURPLE} 选项2 ${RESET}"
             # 在这里添加选项三的操作
         ;;
         3)
             clear
-            echo -e "${BOLD}${YELLOW} 选项3 ${RESET}"
+            echo -e "${BOLD}${PURPLE} 选项3 ${RESET}"
             # 在这里添加选项三的操作
         ;;
         4)
             clear
-            echo -e "${BOLD}${YELLOW} 开发中... ${RESET}"
+            echo -e "${BOLD}${PURPLE} 开发中... ${RESET}"
             # 在这里添加选项三的操作
         ;;
         M|m)
