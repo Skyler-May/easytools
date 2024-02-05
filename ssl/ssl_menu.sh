@@ -33,7 +33,7 @@ options=(
 
 # Show show_ssl_menu
 function show_ssl_menu() {
-    echo -e "======== 证书申请 ========\n"
+    echo -e "${BOLD}${PURPLE}======== 证书申请 ========${RESET}\n"
     for i in "${!options[@]}"; do
         if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
             echo -e "${BOLD}${RED}m. ${options[$i]}${RESET}\n"  # 将返回选项标记为红色
@@ -63,7 +63,7 @@ function handle_choice() {
         ;;
         M|m)
             clear
-            echo "${BOLD}${RED} 返回主菜单！ ${RESET}"
+            echo "${BOLD}${RED} [主菜单] ${RESET}"
         ;;
         *)
             clear

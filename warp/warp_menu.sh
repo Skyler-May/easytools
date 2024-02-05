@@ -33,7 +33,7 @@ options=(
 
 # Show warp
 function show_warp() {
-    echo -e "======== warp ========\n" # 换为实际名称
+    echo -e "${BOLD}${PURPLE}======== warp ========${RESET}\n" # 换为实际名称
     for i in "${!options[@]}"; do
         if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
             echo -e "${BOLD}${RED}m. ${options[$i]}${RESET}\n"  # 将返回选项标记为红色
@@ -63,7 +63,7 @@ function handle_choice() {
         ;;
         M|m)
             clear
-            echo -e "${BOLD}${RED} 返回主菜单！ ${RESET}"
+            echo -e "${BOLD}${RED} [主菜单] ${RESET}"
         ;;
         *)
             clear
