@@ -71,6 +71,7 @@ function handle_choice() {
             if command -v docker &> /dev/null; then
                 clear
                 echo -e "${BOLD}${YELLOW} Docker 已安装，可以继续执行脚本 ${RESET}"
+                "$INSTALL_DOCKER_LNMP_SCRIPT_PATH"
             else
                 echo -e "${RED}未安装 Docker !!! 即将为您安装 Docker...${RESET}"
                 "$DOCKER_SCRIPT_PATH"
