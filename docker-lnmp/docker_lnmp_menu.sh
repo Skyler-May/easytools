@@ -39,7 +39,7 @@ function show_docker_lnmp_menu() {
         if [[ $i -eq $(( ${#options[@]} - 2 )) ]]; then
             echo -e "${BOLD}${RED}m. ${options[$i]}${RESET}\n"  # 将返回选项标记为红色
             elif [[ $i -eq $(( ${#options[@]} -1 )) ]]; then
-            echo -e "${BOLD}${GRAY}u. ${options[$i]}${RESET}\n"  # r 卸载选项，标记为灰色
+            echo -e "${BOLD}${GRAY}r. ${options[$i]}${RESET}\n"  # r 卸载选项，标记为灰色
         else
             echo -e "${BOLD}${PURPLE}$((i+1)). ${options[$i]}${RESET}"
         fi
