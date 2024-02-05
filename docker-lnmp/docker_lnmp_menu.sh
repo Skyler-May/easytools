@@ -104,7 +104,7 @@ function handle_choice() {
         
         M|m)
             clear
-            echo "${BOLD}${RED} 返回主菜单！ ${RESET}"
+            echo "${BOLD}${RED} [主菜单] ${RESET}"
         ;;
         R|r)
             clear
