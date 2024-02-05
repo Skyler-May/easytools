@@ -28,8 +28,8 @@ RESET=$(tput sgr0)
 options=(
     "${BOLD}${PURPLE} 部署 sspanel ${RESET}"
     "${BOLD}${PURPLE} 更新 ${RESET}"
-    "${BOLD}${PURPLE} 查看当前版本 ${RESET}"
-    "${BOLD}${RED} 主菜单 ${RESET}"
+    "${BOLD}${PURPLE} 查看当前版本 ${RESET}\n"
+    "${BOLD}${RED} 上一级菜单！ ${RESET}"
 )
 
 # Show 替换为实际名称
