@@ -35,8 +35,10 @@ options=(
 function show_docker_lnmp_menu() {
     echo -e "======== Docker LNMP ========\n" # 换为实际名称
     for i in "${!options[@]}"; do
-        if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
+        if [[ $i -eq $(( ${#options[@]} - 2 )) ]]; then
             echo -e "${BOLD}${RED}m. ${options[$i]}${RESET}\n"  # 将返回选项标记为红色
+            elif [[ $i -eq $(( ${#options[@]} -1 )) ]]; then
+            echo -e "${BOLD}${GRAY}u. ${options[$i]}${RESET}"  # r 卸载选项，标记为灰色
         else
             echo -e "${BOLD}${PURPLE}$((i+1)). ${options[$i]}${RESET}"
         fi
@@ -63,6 +65,10 @@ function handle_choice() {
         M|m)
             clear
             echo "${BOLD}${RED} 返回主菜单！ ${RESET}"
+        ;;
+        R|r)
+            clear
+            echo "${BOLD}${GRAY} 删除所有容器及网络 ${RESET}"
         ;;
         *)
             clear
