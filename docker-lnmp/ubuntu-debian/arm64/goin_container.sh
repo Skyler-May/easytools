@@ -31,7 +31,7 @@ options=(
     "${BOLD}${PURPLE} 进入 PHP 容器 ${RESET}"
     "${BOLD}${PURPLE} 进入 Redis 容器 ${RESET}"
     "${BOLD}${PURPLE} 进入 phpMyAdmin 容器 ${RESET}"
-    "${BOLD}${RED} 主菜单 ${RESET}"
+    "${BOLD}${RED} 上一级菜单 ${RESET}"
 )
 
 # Show 替换为实际名称
@@ -83,7 +83,7 @@ function handle_choice() {
         ;;
         M|m)
             clear
-            echo "${BOLD}${RED} 返回上一级菜单！ ${RESET}"
+            echo "${BOLD}${RED} [Docker-LNMP] ${RESET}"
         ;;
         *)
             clear
