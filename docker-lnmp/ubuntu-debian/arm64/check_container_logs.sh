@@ -31,7 +31,7 @@ options=(
     "${BOLD}${PURPLE} 查看 PHP 日志 ${RESET}"
     "${BOLD}${PURPLE} 查看 Redis 日志 ${RESET}"
     "${BOLD}${PURPLE} 查看 phpMyAdmin 日志 ${RESET}\n"
-    "${BOLD}${RED} 上一级菜单 ${RESET}"
+    "${BOLD}${RED} 上一级菜单 [Docker LNMP] ${RESET}"
 )
 
 # Show 替换为实际名称
@@ -78,7 +78,7 @@ function handle_choice() {
         ;;
         M|m)
             clear
-            echo "${BOLD}${RED} 返回主菜单！ ${RESET}"
+            echo "${BOLD}${RED} [Docker LNMP] 菜单 ${RESET}"
         ;;
         *)
             clear
