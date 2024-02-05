@@ -18,10 +18,8 @@ result=$(find / -type d -name "easytools" 2>/dev/null)
 
 if [ -n "$result" ]; then
     # Found 'easytools' folder(s) at:
-    # echo "发现 'easytools' 文件夹（目录）在："
     echo "${BOLD}${RED} 发现 'easytools' 文件夹（目录）在： ${RESET}"
     
-    # echo "$result"
     echo "${BOLD}${RED} $result ${RESET}"
     
     # 删除 'easytools' 文件夹
@@ -30,7 +28,6 @@ if [ -n "$result" ]; then
     # 删除 '/usr/local/bin/et' 链接
     rm -f /usr/local/bin/et
     
-    # echo " 删除了 'easytools' 主体 和 'et' 快捷方式."
     echo "${BOLD}${RED} 删除了 'easytools' 主体 和 'et' 快捷方式. ${RESET}"
 else
     echo "${BOLD}${RED} 在任何目录中找不到关于“easytools”文件夹. ${RESET}"

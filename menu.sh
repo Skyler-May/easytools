@@ -116,7 +116,7 @@ function handle_choice() {
         
         R|r)
             clear
-            echo "${BOLD}${RED} 谢谢使用，再见！ ${RESET}"
+            # echo "${BOLD}${RED} 谢谢使用，再见！ ${RESET}"
             "$UNINSTALL_SCRIPT_PATH"
             exit 0
         ;;
