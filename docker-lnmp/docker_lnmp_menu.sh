@@ -32,7 +32,7 @@ options=(
     "${BOLD}${PURPLE} 查看镜像/网络 ${RESET}"
     "${BOLD}${PURPLE} 查看容器/日志 >> ${RESET}\n"
     
-    "${BOLD}${PURPLE} 进入容器 >> ${RESET}"
+    "${BOLD}${PURPLE} 进入容器 >> ${RESET}\n"
     
     "${BOLD}${RED} 返回主菜单 ${RESET}"
     "${BOLD}${GRAY} 删除所有容器及网络 ${RESET}"
@@ -90,8 +90,14 @@ function handle_choice() {
         4)
             clear
             echo -e "${BOLD}${YELLOW} 容器日志 ${RESET}"
-            cd /docker-lnmp/www/sites
+            "$DOCKER_COMPOSE_WORKDIR_SCRIPT_PATH"
             "$CHECK_CONTAINER_LOGS_SCRIPT_PATH"
+        ;;
+        4)
+            clear
+            echo -e "${BOLD}${YELLOW} 进入容器 ${RESET}"
+            "$DOCKER_COMPOSE_WORKDIR_SCRIPT_PATH"
+            "$GOIN_CONTAINER_SCRIPT_PATH"
         ;;
         # 5)
         
