@@ -15,7 +15,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" || exit
 echo "Current working directory after cd: $(pwd)"
 
 # 引入配置
-. /root/easytools/config.sh
+. /easytools/config.sh
 
 # # 打印调试信息
 # echo "SCRIPT_DIR: $SCRIPT_DIR"
