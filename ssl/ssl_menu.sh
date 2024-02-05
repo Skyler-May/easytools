@@ -28,7 +28,7 @@ RESET=$(tput sgr0)
 options=(
     "${BOLD}${PURPLE} CentOS ${RESET}"
     "${BOLD}${PURPLE} ubuntu/Debian ${RESET}\n"
-    "${BOLD}${RED} 主菜单 ${RESET}"
+    "${BOLD}${RED} 返回主菜单 ${RESET}"
 )
 
 # Show show_ssl_menu
