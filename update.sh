@@ -15,10 +15,10 @@ git --git-dir=tmp_easytools/.git --work-tree=tmp_easytools reset --hard origin/m
 find tmp_easytools -name "*.sh" -exec chmod +x {} \;
 
 # 5. 创建符号链接，使得 'et' 命令指向 menu.sh
-ln -sf "/root/easytools/menu.sh" "/usr/local/bin/et"
+ln -sf "/easytools/menu.sh" "/usr/local/bin/et"
 
 # 6. 用最新内容替换当前目录的文件
-rsync -av --exclude='.git' tmp_easytools/ /root/easytools/
+rsync -av --exclude='.git' tmp_easytools/ /easytools/
 
 # 7. 清理临时目录
 rm -rf tmp_easytools
