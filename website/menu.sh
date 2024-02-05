@@ -6,10 +6,10 @@ clear  # 清屏
 cd "$(dirname "$0")"
 
 # 保存脚本所在目录的路径
-SCRIPT_DIR="/root/easytools/website"
+SCRIPT_DIR="/easytools/website"
 
 # 引入配置
-. "/root/easytools/config.sh"
+. "/easytools/config.sh"
 
 # Define colors and styles using tput
 BOLD=$(tput bold)
