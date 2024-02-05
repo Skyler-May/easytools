@@ -83,31 +83,28 @@ function show_menu() {
 
 # Handle user choice
 function handle_choice() {
-    read -p "${BOLD}${BLUE} 请输入选项编号: ${RESET}" choice
-    # 1-1 菜单
+    read -p "${BOLD}${BLUE} 请输入选项编号: ${RESET}\n\n\n" choice
+    echo -e "${BOLD}${RED} 温馨提示: 此脚本仅支持 Ubuntu Debian arm64 系统 ${RESET}"
+    echo -e "${BOLD}${RED} amd 及其他系统敬请期待... ${RESET}"
     case $choice in
         1)
             clear
             echo -e "${BOLD}${YELLOW} 站点部署 ${RESET}\n"
-            # 在这里添加选项1的操作
             "$WEBSITE_MENU_SCRIPT_PATH"
         ;;
         2)
             clear
             echo -e "${BOLD}${YELLOW} 证书申请 ${RESET}"
-            # 在这里添加选项2的操作
             "$SSL_MENU_SCRIPT_PATH"
         ;;
         3)
             clear
             echo -e "${BOLD}${YELLOW} warp 解锁 ${RESET}"
-            # 在这里添加选项3的操作
             "$WARP_MENU_SCRIPT_PATH"
         ;;
         4)
             clear
             echo -e "${BOLD}${YELLOW} Docker LNMP ${RESET}"
-            # 在这里添加选项4的操作
             "$DOCKER_LNMP_MENU_SCRIPT_PATH"
         ;;
         Q|q)
