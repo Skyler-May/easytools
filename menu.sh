@@ -55,7 +55,7 @@ options=(
     "${BOLD}${BLUE} 站点部署 >> ${RESET}"
     "${BOLD}${BLUE} 证书申请 >> ${RESET}"
     "${BOLD}${BLUE} warp 解锁 Netflix >> ${RESET}"
-    "${BOLD}${GRAY} 开发中... >> ${RESET}"
+    "${BOLD}${BLUE} Docker LNMP >> ${RESET}"
     "${BOLD}${GRAY} 开发中... >> ${RESET}"
     "${BOLD}${GRAY} 开发中... >> ${RESET}"
     "${BOLD}${GRAY} 开发中... >> ${RESET}"
@@ -103,6 +103,12 @@ function handle_choice() {
             echo -e "${BOLD}${YELLOW} warp 解锁 ${RESET}"
             # 在这里添加选项3的操作
             "$WARP_MENU_SCRIPT_PATH"
+        ;;
+        4)
+            clear
+            echo -e "${BOLD}${YELLOW} Docker LNMP ${RESET}"
+            # 在这里添加选项4的操作
+            "$DOCKER_LNMP_MENU_SCRIPT_PATH"
         ;;
         Q|q)
             clear

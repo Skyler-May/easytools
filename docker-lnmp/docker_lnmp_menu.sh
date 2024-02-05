@@ -1,15 +1,15 @@
 #!/bin/bash
 
-clear  # 清屏
+clear
 
 # 进入脚本所在目录
 cd "$(dirname "$0")"
 
 # 保存脚本所在目录的路径
-SCRIPT_DIR="/easytools/ssl"
+SCRIPT_DIR="/easytools/docker-lnmp" # 换为实际名称
 
 # 引入配置
-. /easytools/config.sh
+. "/easytools/config.sh"
 
 # Define colors and styles using tput
 BOLD=$(tput bold)
@@ -26,14 +26,13 @@ RESET=$(tput sgr0)
 
 # Define menu options
 options=(
-    "${BOLD}${PURPLE} CentOS ${RESET}"
-    "${BOLD}${PURPLE} ubuntu/Debian ${RESET}\n"
+    "${BOLD}${PURPLE} Docker LNMP ${RESET}"
     "${BOLD}${RED} 主菜单 ${RESET}"
 )
 
-# Show show_ssl_menu
-function show_ssl_menu() {
-    echo -e "======== 证书申请 ========\n"
+# Show 替换为实际名称
+function show_docker_lnmp_menu() {
+    echo -e "======== Docker LNMP ========\n" # 换为实际名称
     for i in "${!options[@]}"; do
         if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
             echo -e "${BOLD}${RED}m. ${options[$i]}${RESET}\n"  # 将返回选项标记为红色
@@ -50,16 +49,13 @@ function handle_choice() {
     case $choice in
         1)
             clear
-            echo -e "${BOLD}${YELLOW} CentOS ${RESET}"
+            echo -e "${BOLD}${YELLOW} 安装 ${RESET}"
             # 在这里添加选项1的操作
-            "$CENTOS_ACME_SCRIPT_PATH"
-            
         ;;
         2)
             clear
-            echo -e "${BOLD}${YELLOW} Ubuntu/Debian ${RESET}"
+            echo -e "${BOLD}${YELLOW} 容器状态 ${RESET}"
             # 在这里添加选项2的操作
-            "$UBUNTU_ACME_SCRIPT_PATH"
         ;;
         M|m)
             clear
@@ -74,7 +70,7 @@ function handle_choice() {
 
 # 主循环
 while true; do
-    show_ssl_menu
+    show_docker_lnmp_menu # 换为实际名称
     handle_choice
     if [[ $choice == "m" || $choice == "M" ]]; then
         break  # 退出循环，返回到调用的主菜单
