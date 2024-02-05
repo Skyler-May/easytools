@@ -36,9 +36,9 @@ echo -e "\033[96m    ░     ░   ▒   ░  ░  ░   ▒ ▒ ░░    ░  
 echo -e "\033[96m    ░  ░      ░  ░      ░   ░ ░                  ░ ░      ░ ░      ░  ░      ░  \033[0m"
 echo -e "\033[96m                            ░ ░                                                 \033[0m"
 echo -e "\033[96m                                                                                \033[0m"
-echo -e "\033[91m温馨提示: 此脚本仅支持 Ubuntu Debian arm64 系统;\033[0m"
-echo -e "\033[91mamd 及其他系统敬请期待...\033[0m\n\n"
-echo -e "\033[91mamd 安装完成后，再次使用只需键入 'et' 即可呼出脚本\033[0m"
+echo -e "\033[91m 温馨提示: 此脚本仅支持 Ubuntu Debian arm64 系统; \033[0m"
+echo -e "\033[91m amd 及其他系统敬请期待...\033[0m \n\n"
+echo -e "\033[91m 安装完成后，再次使用只需键入 'et' 即可呼出脚本 \033[0m"
 
 # Define colors and styles using tput
 BOLD=$(tput bold)
