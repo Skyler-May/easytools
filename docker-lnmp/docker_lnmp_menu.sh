@@ -36,7 +36,7 @@ options=(
 
 # Show 替换为实际名称
 function show_docker_lnmp_menu() {
-    echo -e "{BOLD}${PURPLE} ======== Docker LNMP ======== ${RESET}\n" # 换为实际名称
+    echo -e "${BOLD}${PURPLE} ======== Docker LNMP ======== ${RESET}\n" # 换为实际名称
     for i in "${!options[@]}"; do
         if [[ $i -eq $(( ${#options[@]} - 2 )) ]]; then
             echo -e "${BOLD}${RED}m. ${options[$i]}${RESET}\n"  # 将返回选项标记为红色
