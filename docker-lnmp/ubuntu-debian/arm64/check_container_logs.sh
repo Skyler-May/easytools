@@ -31,7 +31,7 @@ options=(
     "${BOLD}${PURPLE} 查看 PHP 日志 ${RESET}"
     "${BOLD}${PURPLE} 查看 Redis 日志 ${RESET}"
     "${BOLD}${PURPLE} 查看 phpMyAdmin 日志 ${RESET}\n"
-    "${BOLD}${RED} 主菜单 ${RESET}"
+    "${BOLD}${RED} 上一级菜单 ${RESET}"
 )
 
 # Show 替换为实际名称
