@@ -83,7 +83,7 @@ function handle_choice() {
         ;;
         M|m)
             clear
-            echo "${BOLD}${RED} 返回主菜单！ ${RESET}"
+            echo "${BOLD}${RED} 返回上一级菜单！ ${RESET}"
         ;;
         *)
             clear
