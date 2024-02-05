@@ -58,6 +58,7 @@ function handle_choice() {
             clear
             echo -e "${BOLD}${YELLOW} 容器状态 ${RESET}"
             # 在这里添加选项2的操作
+            docker ps -a
         ;;
         M|m)
             clear
