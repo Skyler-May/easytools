@@ -57,7 +57,7 @@ function handle_choice() {
         2)
             clear
             echo -e "${BOLD}${YELLOW} 正在更新 sspanel... ${RESET}"
-            "$GET_VERSION_SCRIPT_PATH" # 首先获取官方最新版本号
+            "$GET_SSPANEL_VERSION_SCRIPT_PATH" # 首先获取官方最新版本号
             "$UPDATE_SSPANEL_SCRIPT_PATH"  # 执行更新
         ;;
         2)

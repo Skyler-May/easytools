@@ -116,7 +116,7 @@ function handle_choice() {
         ;;
         U|u)
             clear
-            echo "${BOLD}${GREEN} 正在更新... ${RESET}"
+            echo "${BOLD}${GREEN} 正在更新 EasyTools... ${RESET}"
             "$UPDATE_SCRIPT_PATH"
         ;;
         
