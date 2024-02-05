@@ -14,18 +14,18 @@ WHITE=$(tput setaf 7)
 RESET=$(tput sgr0)
 
 # CentOS
-echo -e "${BOLD}${GREEN} 正在安装必要的依赖和获取证书..."
+echo -e "${BOLD}${GREEN} 正在安装必要的依赖和获取证书... ${RESET}"
 yum install -y socat
 curl https://get.acme.sh | sh
 ln -s /root/.acme.sh/acme.sh /usr/local/bin/acme.sh
 
 # 用户注册
-echo -e "${BOLD}${RED} 请输入您的邮箱地址："
+echo -e "${BOLD}${RED} 请输入您的邮箱地址： ${RESET}"
 read email_address
 acme.sh --register-account -m "$email_address"
 
 # 开始申请证书
-echo -e "${BOLD}${RED} 请输入您的域名："
+echo -e "${BOLD}${RED} 请输入您的域名： ${RESET}"
 read your_domain
 acme.sh --issue -d "$your_domain" --standalone -k ec-256
 
