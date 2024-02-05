@@ -54,15 +54,50 @@ function handle_choice() {
         1)
             clear
             echo -e "${BOLD}${YELLOW} 安装 ${RESET}"
-            # 在这里添加选项1的操作
             "$INSTALL_DOCKER_LNMP_SCRIPT_PATH"
         ;;
         2)
             clear
-            echo -e "${BOLD}${YELLOW} 容器状态 ${RESET}"
-            # 在这里添加选项2的操作
+            echo -e "${BOLD}${YELLOW} 查看容器状态 ${RESET}"
             docker ps -a
         ;;
+        3)
+            clear
+            echo -e "${BOLD}${YELLOW} 查看镜像/网络 ${RESET}"
+            docker images
+            docker network ls
+        ;;
+        4)
+            clear
+            echo -e "${BOLD}${YELLOW} 查看容器日志 ${RESET}"
+            cd /docker-lnmp/www/sites
+            "$CHECK_CONTAINER_LOGS_SCRIPT_PATH"
+        ;;
+        # 5)
+        
+        # ;;
+        # 6)
+        
+        # ;;
+        # 7)
+        
+        # ;;
+        # 8)
+        
+        # ;;
+        # 9)
+        
+        # ;;
+        # 10)
+        
+        # ;;
+        # 11)
+        
+        # ;;
+        # 12)
+        
+        # ;;
+        
         M|m)
             clear
             echo "${BOLD}${RED} 返回主菜单！ ${RESET}"
