@@ -3,7 +3,7 @@
 clear
 
 # 设置版本号
-VERSION="v1.1.3"
+VERSION="v1.1.4"
 
 # 打印当前工作目录
 echo "Current working directory: $(pwd)"
