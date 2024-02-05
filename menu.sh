@@ -112,6 +112,7 @@ function handle_choice() {
         ;;
         Q|q)
             clear
+            echo "${BOLD}${RED} 谢谢使用，再见！ ${RESET}"
             exit 0
         ;;
         U|u)
