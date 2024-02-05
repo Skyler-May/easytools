@@ -67,7 +67,7 @@ options=(
 
 # Show menu
 function show_menu() {
-    echo -e "${BOLD}${BLUE}—————————————————————————— 主菜单 $VERSION ————————————————————————————${RESET}\n"
+    echo -e "${BOLD}${BLUE}——————————————————————————————— 主菜单 $VERSION —————————————————————————————————${RESET}\n"
     for i in "${!options[@]}"; do
         if [[ $i -eq $(( ${#options[@]} - 3 )) ]]; then
             echo -e "${BOLD}${RED}q. ${options[$i]}${RESET}"  # q 退出选项，标记为红色
