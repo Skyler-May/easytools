@@ -1,5 +1,16 @@
 #!/bin/bash
 
+# 检查系统是否安装了 Docker
+check_docker_installed() {
+    if command -v docker &> /dev/null; then
+        echo "Docker 已安装"
+        return 0  # 返回 0 表示已安装
+    else
+        echo "Docker 未安装"
+        return 1  # 返回 1 表示未安装
+    fi
+}
+
 clear
 
 # 进入脚本所在目录
@@ -56,9 +67,15 @@ function handle_choice() {
     # 1-1 菜单
     case $choice in
         1)
-            clear
-            echo -e "${BOLD}${YELLOW} 安装 ${RESET}"
-            "$INSTALL_DOCKER_LNMP_SCRIPT_PATH"
+            # 检查是否安装了Docker
+            if command -v docker &> /dev/null; then
+                clear
+                echo -e "${BOLD}${YELLOW} 安装 ${RESET}"
+                "$INSTALL_DOCKER_LNMP_SCRIPT_PATH"
+            else
+                echo -e "${RED}未安装 Docker !!! 即将安装 Docker...${RESET}"
+                "$DOCKER_SCRIPT_PATH"
+            fi
         ;;
         2)
             clear
