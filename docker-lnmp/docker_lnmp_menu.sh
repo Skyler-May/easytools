@@ -26,7 +26,8 @@ RESET=$(tput sgr0)
 
 # Define menu options
 options=(
-    "${BOLD}${PURPLE} Docker LNMP ${RESET}"
+    "${BOLD}${PURPLE} 安装 ${RESET}"
+    "${BOLD}${PURPLE} 容器状态 ${RESET}"
     "${BOLD}${RED} 主菜单 ${RESET}"
 )
 
