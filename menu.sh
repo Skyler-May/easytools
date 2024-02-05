@@ -23,6 +23,19 @@ cd "$(dirname "${BASH_SOURCE[0]}")" || exit
 # echo "WEBSITE_MENU_SCRIPT_PATH: $WEBSITE_MENU_SCRIPT_PATH"
 # echo "ACME_SCRIPT_PATH: $ACME_SCRIPT_PATH"
 
+# Define colors and styles using tput
+BOLD=$(tput bold)
+GRAY=$(tput setaf 0)
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+BLUE=$(tput setaf 4)
+PURPLE=$(tput setaf 5)
+CYAN=$(tput setaf 6)
+WHITE=$(tput setaf 7)
+
+RESET=$(tput sgr0)
+
 echo -e "\033[96m—————————————————————————— EasyTools 工具箱 $VERSION ————————————————————————————"
 echo -e "\033[96m                                                                                \033[0m"
 echo -e "\033[96m ▓█████  ▄▄▄        ██████ ▓██   ██▓ ███████▓ ▒█████   ▒█████   ██▓      ██████ \033[0m"
@@ -41,18 +54,18 @@ echo -e "\033[91m           此脚本仅支持 Ubuntu Debian arm64 系统; \033[
 echo -e "\033[91m           amd 及其他系统敬请期待...\033[0m\n"
 echo -e "\033[91m           安装完成后，再次使用只需键入 'et' 即可呼出脚本 \033[0m"
 
-# Define colors and styles using tput
-BOLD=$(tput bold)
-GRAY=$(tput setaf 0)
-RED=$(tput setaf 1)
-GREEN=$(tput setaf 2)
-YELLOW=$(tput setaf 3)
-BLUE=$(tput setaf 4)
-PURPLE=$(tput setaf 5)
-CYAN=$(tput setaf 6)
-WHITE=$(tput setaf 7)
+# # Define colors and styles using tput
+# BOLD=$(tput bold)
+# GRAY=$(tput setaf 0)
+# RED=$(tput setaf 1)
+# GREEN=$(tput setaf 2)
+# YELLOW=$(tput setaf 3)
+# BLUE=$(tput setaf 4)
+# PURPLE=$(tput setaf 5)
+# CYAN=$(tput setaf 6)
+# WHITE=$(tput setaf 7)
 
-RESET=$(tput sgr0)
+# RESET=$(tput sgr0)
 
 # Define menu options
 options=(
