@@ -33,7 +33,7 @@ options=(
     "${BOLD}${PURPLE} 查看容器/日志 >> ${RESET}\n"
     
     "${BOLD}${PURPLE} 进入容器 >> ${RESET}\n"
-    "${BOLD}${PURPLE} 重启所有容器 >> ${RESET}\n"
+    "${BOLD}${PURPLE} 重启所有容器 ${RESET}\n"
     
     "${BOLD}${RED} 返回主菜单 ${RESET}"
     "${BOLD}${GRAY} 删除所有容器及网络 ${RESET}"
