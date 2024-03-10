@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "Current directory: $(pwd)"
+echo "Environment variables: $(env)"
+
 # Define colors and styles
 BOLD=$(tput bold)
 RED=$(tput setaf 1)
