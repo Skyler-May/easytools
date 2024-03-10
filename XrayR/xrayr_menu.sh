@@ -22,16 +22,16 @@ RESET=$(tput sgr0)
 options=(
     "${BOLD}${PURPLE} 安装 XrayR >> ${RESET}"
     "${BOLD}${PURPLE} 更新 XrayR  ${RESET}"
-    "${BOLD}${PURPLE} XrayR 日志  ${RESET}"
+    "${BOLD}${PURPLE} XrayR 日志  ${RESET}\n"
     
-    "${BOLD}${RED} 主菜单 ${RESET}"
+    "${BOLD}${WHITE} 主菜单 ${RESET}"
 )
 
 function show_xrayr_menu() {
-    echo -e "=== XrayR 选项 ===\n"
+    echo -e "=== XrayR ===\n"
     for i in "${!options[@]}"; do
         if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
-            echo -e "${BOLD}${RED}b. ${options[$i]}${RESET}\n" # back
+            echo -e "${BOLD}${WHITE}b. ${options[$i]}${RESET}\n" # back
         else
             echo -e "${BOLD}${PURPLE}$((i+1)). ${options[$i]}${RESET}"
         fi

@@ -22,8 +22,11 @@ RESET=$(tput sgr0)
 
 # Define menu options
 options=(
-    "${BOLD}${PURPLE} xrayr_install_options ${RESET}"
-    "${BOLD}${RED} 主菜单 ${RESET}"
+    "${BOLD}${PURPLE} Ubuntu/Debian ${RESET}"
+    "${BOLD}${PURPLE} arm64 ${RESET}"
+    "${BOLD}${PURPLE} CentOS ${RESET}\n"
+    
+    "${BOLD}${WHITE} 主菜单 ${RESET}"
 )
 
 # Show 替换为实际名称
@@ -31,7 +34,7 @@ function show_xrayr_install_options() {
     echo -e "======== xrayr install options ========\n" # 换为实际名称
     for i in "${!options[@]}"; do
         if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
-            echo -e "${BOLD}${RED}b. ${options[$i]}${RESET}\n"  # back
+            echo -e "${BOLD}${WHITE}b. ${options[$i]}${RESET}\n"  # back
         else
             echo -e "${BOLD}${PURPLE}$((i+1)). ${options[$i]}${RESET}"
         fi
@@ -66,7 +69,7 @@ function xrayr_install_options_choice() {
         ;;
         b|B)
             clear
-            echo "${BOLD}${RED} 返回[xrayr install options] ${RESET}"
+            echo "${BOLD}${WHITE} 返回[XrayR] ${RESET}"
         ;;
         *)
             clear
