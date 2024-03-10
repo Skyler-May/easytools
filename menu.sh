@@ -20,7 +20,7 @@ CYAN=$(tput setaf 6)
 WHITE=$(tput setaf 7)
 RESET=$(tput sgr0)
  
-echo -e "\033[96m ———————————————————————————— EasyTools 工具箱 $VERSION ————————————————————————————"
+echo -e "\033[96m ———————————————————————————— EasyTools 工具箱 $VERSION ————————————————————————————\n"
 
 # color arr
 colors=("38;5;196" "38;5;202" "38;5;208" "38;5;214" "38;5;220")
@@ -36,9 +36,10 @@ for ((i=0; i<${#logo[@]}; i++)); do
     color="\033[${colors[i]}m"
     reset="\033[0m"
     
-    echo -e "${color}${logo[i]}${reset}\n"
+    echo -e "${color}${logo[i]}${reset}"
 done
 
+echo ""
 echo -e "${BOLD}${YELLOW} 温馨提示：${RESET}\n"
 echo -e "${BOLD}${YELLOW}       此脚本仅支持 Ubuntu Debian arm64 系统; ${RESET}"
 echo -e "${BOLD}${YELLOW}       amd 及其他系统敬请期待... ${RESET}"
