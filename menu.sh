@@ -20,7 +20,7 @@ CYAN=$(tput setaf 6)
 WHITE=$(tput setaf 7)
 RESET=$(tput sgr0)
  
-echo -e "\033[96m ———————————————————————————— EasyTools 工具箱 ————————————————————————————\n"
+echo -e "\033[96m —————————————————————————————— EasyTools 工具箱 ——————————————————————————————\n"
 
 # color arr
 colors=("38;5;196" "38;5;202" "38;5;208" "38;5;214" "38;5;220")
@@ -70,7 +70,7 @@ options=(
 
 # Show menu
 function show_menu() {
-    echo -e "${BOLD}${BLUE}——————————————————————————————— 主菜单 —————————————————————————————————${RESET}\n"
+    echo -e "${BOLD}${BLUE} —————————————————————————————— 主菜单 —————————————————————————————— ${RESET}\n"
     for i in "${!options[@]}"; do
         if [[ $i -eq $(( ${#options[@]} - 3 )) ]]; then
             echo -e "${BOLD}${RED}q. ${options[$i]}${RESET}"  # q 退出选项，标记为红色
