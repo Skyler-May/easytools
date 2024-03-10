@@ -20,7 +20,7 @@ CYAN=$(tput setaf 6)
 WHITE=$(tput setaf 7)
 RESET=$(tput sgr0)
  
-echo -e "\033[96m———————————————————————————— EasyTools 工具箱 $VERSION ————————————————————————————"
+echo -e "\033[96m ———————————————————————————— EasyTools 工具箱 $VERSION ————————————————————————————\n"
 # color arr
 colors=("38;5;196" "38;5;202" "38;5;208" "38;5;214" "38;5;220")
 
@@ -35,7 +35,7 @@ for ((i=0; i<${#logo[@]}; i++)); do
     color="\033[${colors[i]}m"
     reset="\033[0m"
     
-    echo -e "${color}${logo[i]}${reset}"
+    echo -e "${color}${logo[i]}${reset}\n"
 done
 
 echo -e "${BOLD}${YELLOW} 温馨提示：${RESET}\n"
