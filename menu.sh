@@ -1,6 +1,8 @@
 #!/bin/bash
 
 clear
+set -x  # 启用调试模式
+# 在这里插入脚本的其余部分
 
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit
 # echo "Current working directory: $(pwd)"
@@ -107,10 +109,8 @@ function handle_choice() {
             echo "${BOLD}${GREEN} 正在更新 EasyTools... ${RESET}"
             "$UPDATE_SCRIPT_PATH"
         ;;
-        
         R|r)
             clear
-            # echo "${BOLD}${RED} 谢谢使用，再见！ ${RESET}"
             "$UNINSTALL_SCRIPT_PATH"
             exit 0
         ;;
@@ -126,3 +126,5 @@ while true; do
     show_menu
     handle_choice
 done
+
+set +x  # 关闭调试模式
