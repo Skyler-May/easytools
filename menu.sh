@@ -40,7 +40,7 @@ for ((i=0; i<${#logo[@]}; i++)); do
 done
 
 echo ""
-echo -e "${BOLD}${YELLOW} 提示：${RESET}"
+echo -e "${BOLD}${YELLOW} 使用：${RESET}"
 echo -e "${BOLD}${YELLOW}    安装完成后，再次使用只需键入 'et' 即可调出脚本 ${RESET}\n"
 
 ip_address=$(curl -s ifconfig.me)
@@ -48,7 +48,7 @@ region_code=$(curl -s ipinfo.io/country)
 system_info=$(cat /etc/*-release 2>/dev/null | grep -E "PRETTY_NAME" | cut -d= -f2)
 architecture=$(uname -m)
 echo -e "${YELLOW} 系统信息：${RESET}"
-echo -e "${YELLOW}       IP : $ip_address ${RESET}"
+echo -e "${YELLOW}       IP  ：$ip_address ${RESET}"
 echo -e "${YELLOW}       地区：$region_code ${RESET}"
 echo -e "${YELLOW}       系统：$system_info"
 echo -e "${YELLOW}       架构：$architecture ${RESET}\n"
