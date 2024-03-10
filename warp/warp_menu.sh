@@ -9,7 +9,7 @@ cd "$(dirname "$0")"
 SCRIPT_DIR="/easytools/warp" # 换为实际名称
 
 # 引入配置
-. "/easytools/config.sh"
+. /easytools/config.sh
 
 # Define colors and styles using tput
 BOLD=$(tput bold)

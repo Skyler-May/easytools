@@ -6,7 +6,7 @@ clear
 cd "$(dirname "$0")"
 
 # 引入配置
-. "/config.sh"
+. /easytools/config.sh
 
 # Define colors and styles using tput
 BOLD=$(tput bold)
