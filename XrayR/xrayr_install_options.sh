@@ -26,7 +26,7 @@ options=(
     "${BOLD}${PURPLE} arm64 ${RESET}"
     "${BOLD}${PURPLE} CentOS ${RESET}\n"
     
-    "${BOLD}${WHITE} 主菜单 ${RESET}"
+    "${BOLD}${WHITE} 上一级[XrayR] ${RESET}"
 )
 
 # Show 替换为实际名称
@@ -69,7 +69,7 @@ function xrayr_install_options_choice() {
         ;;
         b|B)
             clear
-            echo "${BOLD}${WHITE} 返回[XrayR] ${RESET}"
+            echo "${BOLD}${WHITE} [XrayR] ${RESET}"
         ;;
         *)
             clear
