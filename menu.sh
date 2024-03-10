@@ -77,7 +77,7 @@ function show_menu() {
             elif [[ $i -eq $(( ${#options[@]} -2 )) ]]; then
             echo -e "${BOLD}${GREEN}u. ${options[$i]}${RESET}"  # u 更新选项，标记为绿色
             elif [[ $i -eq $(( ${#options[@]} -1 )) ]]; then
-            echo -e "${BOLD}${GRAY}r. ${options[$i]}${RESET}\n"  # r 卸载选项，标记为灰色
+            echo -e "${BOLD}${GRAY}d. ${options[$i]}${RESET}\n"  # d 卸载选项，标记为灰色
         else
             echo -e "${BOLD}${BLUE}$((i+1)). ${options[$i]}${RESET}"
         fi
@@ -118,7 +118,7 @@ function handle_choice() {
             echo "${BOLD}${GREEN} 正在更新 EasyTools... ${RESET}"
             "$UPDATE_SCRIPT_PATH"
         ;;
-        R|r)
+        D|d)
             clear
             "$UNINSTALL_SCRIPT_PATH"
             exit 0
