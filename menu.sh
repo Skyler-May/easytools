@@ -104,7 +104,7 @@ function handle_choice() {
         2)
             clear
             echo -e "${BOLD}${YELLOW} 证书申请 ${RESET}"
-            "$SSL_MENU_SCRIPT_PATH"
+            "$ACME_SCRIPT_PATH"
         ;;
         3)
             clear
