@@ -36,7 +36,7 @@ function show_warp() {
     echo -e "${BOLD}${PURPLE}======== warp ========${RESET}\n" # 换为实际名称
     for i in "${!options[@]}"; do
         if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
-            echo -e "${BOLD}${RED}m. ${options[$i]}${RESET}\n"  # 将返回选项标记为红色
+            echo -e "${BOLD}${RED}b. ${options[$i]}${RESET}\n"  # 将返回选项标记为红色
         else
             echo -e "${BOLD}${PURPLE}$((i+1)). ${options[$i]}${RESET}"
         fi
@@ -51,15 +51,11 @@ function handle_choice() {
         1)
             clear
             echo -e "${BOLD}${YELLOW} 安装 ${RESET}"
-            # 在这里添加选项1的操作
-            wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh [option] [lisence/url/token]
+            "$WARP_INSTALL_SCRIPT_PATH"
         ;;
         2)
             clear
-            echo -e "${BOLD}${YELLOW} 呼出 warp ${RESET}"
-            # 在这里添加选项2的操作
-            cd "$root_dir"
-            warp [option] [license]
+            "$WARP_CALL_SCRIPT_PATH"
         ;;
         M|m)
             clear
@@ -76,7 +72,7 @@ function handle_choice() {
 while true; do
     show_warp # 换为实际名称
     handle_choice
-    if [[ $choice == "m" || $choice == "M" ]]; then
+    if [[ $choice == "b" || $choice == "B" ]]; then
         break  # 退出循环，返回到调用的主菜单
     fi
 done
