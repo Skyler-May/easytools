@@ -54,14 +54,14 @@ Nodes:
           ProxyProtocolVer: 0 # 发送 PROXY 协议版本， 0 为禁用
       CertConfig: # 证书配置
         CertMode: dns # 关于如何获取证书的选项：无、文件、http、tls、dns。 选择“无”将强制禁用 tls 配置。
-        CertDomain: "域名.com" # 要认证的域 （必须）
-        CertFile: /etc/XrayR/cert/域名.com.cert # 证书模式为文件                                               （必须）
-        KeyFile: /etc/XrayR/cert/域名.com.key # 域名密钥文件                                                  （必须）
-        Provider: cloudflare # DNS 证书提供商，在此处获取完整的支持列表: https://go-acme.github.io/lego/dns/    （必须）
-        Email: 123@qq.com # 邮箱                                                                             （必须）
+        CertDomain: "域名.com" # 要认证的域                                                                     （必须）
+        CertFile: /etc/XrayR/cert/域名.com.cert # 证书模式为文件                                                （必须）
+        KeyFile: /etc/XrayR/cert/域名.com.key # 域名密钥文件                                                    （必须）
+        Provider: cloudflare # DNS 证书提供商，在此处获取完整的支持列表: https://go-acme.github.io/lego/dns/     （必须）
+        Email: 123@qq.com # 邮箱                                                                                （必须）
         DNSEnv: # DNS 提供商使用的 DNS ENV 选项
-          CLOUDFLARE_EMAIL: 123@qq.com # 域名商的用户名 或 邮箱                                                （必须）
-          CLOUDFLARE_API_KEY: 123 # 域名商的 API Key                                                           （必须）
+          CLOUDFLARE_EMAIL: 123@qq.com # 域名商的用户名 或 邮箱                                                 （必须）
+          CLOUDFLARE_API_KEY: 123 # 域名商的 API Key                                                            （必须）
   #   PanelType: "NewV2board" # Panel type: SSpanel, V2board, NewV2board, PMpanel, Proxypanel, V2RaySocks
   #   ApiConfig:
   #     ApiHost: "http://127.0.0.1:668"
