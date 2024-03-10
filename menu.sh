@@ -21,7 +21,7 @@ WHITE=$(tput setaf 7)
 RESET=$(tput sgr0)
  
 echo -e "\033[96m ———————————————————————————— EasyTools 工具箱 $VERSION ————————————————————————————"
-echo ""
+
 # color arr
 colors=("38;5;196" "38;5;202" "38;5;208" "38;5;214" "38;5;220")
 
