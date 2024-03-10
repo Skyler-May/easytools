@@ -47,11 +47,11 @@ echo -e "${BOLD}${YELLOW}       安装完成后，再次使用只需键入 'et' 
 
 VERSION_INFO=$(cat ./version.json)
 VERSION=$(echo $VERSION_INFO | grep -o '"version": *"[^"]*"' | awk -F'"' '{print $4}')
-echo "Version: $VERSION"
+echo "${GRAY}Version: $VERSION${RESET}"
 RELEASE_DATE=$(echo $VERSION_INFO | grep -o '"release_date": *"[^"]*"' | awk -F'"' '{print $4}')
-echo "Release Date: $RELEASE_DATE"
+echo "${GRAY}Release Date: $RELEASE_DATE${RESET}"
 AUTHOR=$(echo $VERSION_INFO | grep -o '"author": *"[^"]*"' | awk -F'"' '{print $4}')
-echo "Author: $AUTHOR"
+echo "${GRAY}Author: $AUTHOR${RESET}"
 
 # Define menu options
 options=(
