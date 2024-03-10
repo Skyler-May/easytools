@@ -33,7 +33,8 @@ choice=$(echo "$choice" | tr '[:lower:]' '[:upper:]')
 
 if [ "$choice" == "Y" ]; then
     # Clone Warehouse
-    git clone https://github.com/XrayR-project/XrayR-release
+    cd /easytools
+    git clone https://github.com/XrayR-project/XrayR-release /root/XrayR-release
     
     # Define source directories
     source_dir1="/root"
