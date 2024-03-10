@@ -74,7 +74,7 @@ function menu_options() {
         ;;
         B|b)
             clear
-            echo "${BOLD}${WHITE} [Website] 菜单 ${RESET}"
+            echo "${BOLD}${WHITE} 主菜单 ${RESET}"
             exit 0
         ;;
         *)

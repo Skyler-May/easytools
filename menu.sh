@@ -2,26 +2,11 @@
 
 clear
 
-# 设置版本号
-VERSION="v1.1.4"
-
-# 打印当前工作目录
-# echo "Current working directory: $(pwd)"
-
-# 设置脚本所在目录为当前工作目录
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit
-
-# 打印执行 cd 命令（改变当前工作目录）之后，输出改变后的当前工作目录
+# echo "Current working directory: $(pwd)"
 # echo "Current working directory after cd: $(pwd)"
 
-# 引入配置
 . /easytools/config.sh
-
-# # 打印调试信息
-# echo "SCRIPT_DIR: $SCRIPT_DIR"
-# echo "MENU_SCRIPT_PATH: $MENU_SCRIPT_PATH"
-# echo "WEBSITE_MENU_SCRIPT_PATH: $WEBSITE_MENU_SCRIPT_PATH"
-# echo "ACME_SCRIPT_PATH: $ACME_SCRIPT_PATH"
 
 # Define colors and styles using tput
 BOLD=$(tput bold)
