@@ -1,7 +1,8 @@
 #!/bin/bash
 
-echo "Current directory: $(pwd)"
-echo "Environment variables: $(env)"
+# Debug
+# echo "Current directory: $(pwd)"
+# echo "Environment variables: $(env)"
 
 # Define colors and styles
 BOLD=$(tput bold)
