@@ -58,7 +58,7 @@ if [ "$choice" == "Y" ]; then
     if [ $? -eq 0 ]; then
         echo -e "${GREEN}config.yml successfully moved to $destination_dir1${RESET}"
     else
-        echo -e "${RED}The root directory does not have a config.yml file, you can manually start it${RESET}"
+        echo -e "${RED}The /root directory does not have a config.yml file, you can manually start it${RESET}"
         exit 0
     fi
     
