@@ -1,78 +1,83 @@
 #!/bin/bash
 
-# 定义颜色和样式
+# Define colors and styles
 BOLD=$(tput bold)
 RED=$(tput setaf 1)
 GREEN=$(tput setaf 2)
 YELLOW=$(tput setaf 3)
-PURPLE=$(tput setaf 5)
 RESET=$(tput sgr0)
 
 function type_message() {
     message=$1
     for ((i=0; i<${#message}; i++)); do
         echo -n "${BOLD}${YELLOW}${message:$i:1}${RESET}"
-        sleep 0.15   # 调整此处的 sleep 时间以控制打字速度
+        sleep 0.03   # Adjust sleep time to control typing speed
     done
-    echo   # 换行
+    echo   # Newline
 }
 
-# 示例消息
-prompt="由于一键安装过程人工无法干预，您需要先配置好 'config.yml' 文件并上传到 'root' 目录下；相关配置可到 'XrayR官网' 了解详情或使用本项目中的配置文件（项目中的配置文件与官方一致，可放心使用）"
+# Example message
+prompt="由于安装的自动化性质，您需要配置“config.yml”文件并将其上传到“root”目录；有关配置的详细信息，请参阅“XrayR官方网站”或使用该项目中的配置文件（该项目中配置文件与官方文件一致，可以放心使用）."
 
-# 调用函数打印消息
+# Call the function to print the message
 type_message "$prompt"
 
-# 提示用户确认
-read -p "${BOLD}${PURPLE}Are you ready? (Y/N): ${RESET}" choice
+# Prompt user for confirmation
+read -p "${BOLD}${YELLOW}Are you ready? (Y/N): ${RESET}" choice
 
-# 将用户输入转换为大写
+# Convert user input to uppercase
 choice=$(echo "$choice" | tr '[:lower:]' '[:upper:]')
 
 if [ "$choice" == "Y" ]; then
-    # 指定目录的路径
+    # Clone Warehouse
+    git clone https://github.com/XrayR-project/XrayR-release
+    
+    # Define source directories
+    source_dir1="/root"
+    source_dir2="/easytools/xrayr"
+    
+    # Define destination directories
     destination_dir1="/root/XrayR-release/config"
     destination_dir2="/root/XrayR-release"
-
-    # 检查目标目录是否存在，如果不存在则创建
-    if [ ! -d "$destination_dir1" ]; then
-        echo -e "${RED}目标目录不存在，无法移动 config.yml${RESET}"
-        exit 1
-    fi
-
-    if [ ! -d "$destination_dir2" ]; then
-        echo -e "${RED}目标目录不存在，无法移动 docker-compose.yml${RESET}"
-        exit 1
-    fi
-
-    # 移动 config.yml 到目标目录1
-    mv -v config.yml "$destination_dir1"
+    
+    # Check if destination directories exist; if not, create them
+    for dest_dir in "$destination_dir1" "$destination_dir2"; do
+        if [ ! -d "$dest_dir" ]; then
+            echo -e "${RED}Destination directory $dest_dir does not exist; cannot move files.${RESET}"
+            exit 1
+        fi
+    done
+    
+    # Move config.yml from source_dir1 to destination_dir1
+    mv -v "$source_dir1/config.yml" "$destination_dir1"
     if [ $? -eq 0 ]; then
-        echo -e "${GREEN}config.yml 成功移动到目标目录${RESET}"
+        echo -e "${GREEN}config.yml successfully moved to $destination_dir1${RESET}"
     else
-        echo -e "${RED}config.yml 移动失败${RESET}"
+        echo -e "${RED}The root directory does not have a config.yml file, you can manually start it${RESET}"
+        exit 0
     fi
-
-    # 移动 docker-compose.yml 到目标目录2
-    mv -v docker-compose.yml "$destination_dir2"
+    
+    # Move docker-compose.yml from source_dir2 to destination_dir2
+    cp -v "$source_dir2/docker-compose.yml" "$destination_dir2"
     if [ $? -eq 0 ]; then
-        echo -e "${GREEN}docker-compose.yml 成功移动到目标目录${RESET}"
+        echo -e "${GREEN}docker-compose.yml successfully copied to $destination_dir2${RESET}"
     else
-        echo -e "${RED}docker-compose.yml 移动失败${RESET}"
+        echo -e "${RED}Failed to copy docker-compose.yml${RESET}"
+        exit 0
     fi
-
-    # 执行
-    # 指定 XrayR-release 目录的路径
+    
+    # Execute
+    # Specify the path to the XrayR-release directory
     xrayr_release_dir="/root/XrayR-release"
-
-    # 切换到 XrayR-release 目录
+    
+    # Change to the XrayR-release directory
     cd "$xrayr_release_dir"
-
+    
     docker-compose -f docker-compose.yml up -d
-
+    
     cd "$root_dir"
     rm -rf install_XrayR.sh
 else
-    # 用户选择不继续
-    echo -e "${YELLOW}Okey, you need to be prepared.${RESET}"
+    # User chooses not to continue
+    echo -e "${YELLOW}Okay, you need to be prepared.${RESET}"
 fi

@@ -11,7 +11,7 @@ function countdown {
     done
 }
 
-compose_version=$(docker-compose --version)
+docker_version=$(docker --version)
 
 # Define echo_color function
 function echo_color {
@@ -28,7 +28,7 @@ function echo_color {
     esac
 }
 
-if [ -z "$compose_version" ]; then
+if [ -z "$docker_version" ]; then
     yum install -y yum-utils
     countdown 3
     
@@ -46,6 +46,6 @@ if [ -z "$compose_version" ]; then
         sudo service docker start
     fi
 else
-    echo_color "green" "您已安装了 Docker Compose 无需再次安装"
-    echo_color "green" "版本：$compose_version"
+    echo_color "green" "您已安装了 Docker 无需再次安装"
+    echo_color "green" "版本：$docker_version"
 fi
