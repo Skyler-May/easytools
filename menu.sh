@@ -1,8 +1,6 @@
 #!/bin/bash
 
 clear
-set -x  # 启用调试模式
-# 在这里插入脚本的其余部分
 
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit
 # echo "Current working directory: $(pwd)"
@@ -126,5 +124,3 @@ while true; do
     show_menu
     handle_choice
 done
-
-set +x  # 关闭调试模式
