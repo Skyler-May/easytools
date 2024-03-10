@@ -5,9 +5,6 @@ clear
 # 进入脚本所在目录
 cd "$(dirname "$0")"
 
-# 保存脚本所在目录的路径
-SCRIPT_DIR="/easytools/warp" # 换为实际名称
-
 # 引入配置
 . /easytools/config.sh
 
@@ -21,45 +18,55 @@ BLUE=$(tput setaf 4)
 PURPLE=$(tput setaf 5)
 CYAN=$(tput setaf 6)
 WHITE=$(tput setaf 7)
-
 RESET=$(tput sgr0)
 
 # Define menu options
 options=(
-    "${BOLD}${PURPLE} 安装 ${RESET}"
-    "${BOLD}${PURPLE} 呼出 warp ${RESET}\n"
+    "${BOLD}${PURPLE} xrayr_install_options ${RESET}"
     "${BOLD}${RED} 主菜单 ${RESET}"
 )
 
-# Show warp
-function show_warp_menu() {
-    echo -e "${BOLD}${PURPLE}======== warp ========${RESET}\n" # 换为实际名称
+# Show 替换为实际名称
+function show_xrayr_install_options() {
+    echo -e "======== xrayr install options ========\n" # 换为实际名称
     for i in "${!options[@]}"; do
         if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
-            echo -e "${BOLD}${RED}b. ${options[$i]}${RESET}\n"  # 将返回选项标记为红色
+            echo -e "${BOLD}${RED}b. ${options[$i]}${RESET}\n"  # back
         else
             echo -e "${BOLD}${PURPLE}$((i+1)). ${options[$i]}${RESET}"
         fi
     done
 }
 
-# Handle user choice
-function warp_menu_choice() {
+# xrayr_install_options user choice
+function xrayr_install_options_choice() {
     read -p "${BOLD}${BLUE} 请输入选项编号: ${RESET}" choice
     # 1-1 菜单
     case $choice in
         1)
             clear
-            echo -e "${BOLD}${YELLOW} 安装 ${RESET}"
-            "$WARP_INSTALL_SCRIPT_PATH"
+            echo -e "${BOLD}${YELLOW} Ubuntu/Debian ${RESET}"
+            "$UBUNTU_DEBIAN_SCRIPT_PATH"
+            "$COMPOSE_SCRIPT_PATH"
+            "$RUNXRAYR_SCRIPT_PATH"
         ;;
         2)
             clear
-            "$WARP_CALL_SCRIPT_PATH"
+            echo -e "${BOLD}${YELLOW} arm64 ${RESET}"
+            "$ARM64_SCRIPT_PATH"
+            "$COMPOSE_SCRIPT_PATH"
+            "$RUNXRAYR_SCRIPT_PATH"
         ;;
-        M|m)
+        3)
             clear
-            echo -e "${BOLD}${RED} [主菜单] ${RESET}"
+            echo -e "${BOLD}${YELLOW} CentOS ${RESET}"
+            "$CENTOS_SCRIPT_PATH"
+            "$COMPOSE_SCRIPT_PATH"
+            "$RUNXRAYR_SCRIPT_PATH"
+        ;;
+        b|B)
+            clear
+            echo "${BOLD}${RED} 返回[xrayr install options] ${RESET}"
         ;;
         *)
             clear
@@ -70,8 +77,8 @@ function warp_menu_choice() {
 
 # 主循环
 while true; do
-    show_warp_menu # 换为实际名称
-    warp_menu_choice
+    show_xrayr_install_options # 换为实际名称
+    xrayr_install_options_choice
     if [[ $choice == "b" || $choice == "B" ]]; then
         break  # 退出循环，返回到调用的主菜单
     fi

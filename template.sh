@@ -2,61 +2,80 @@
 
 clear
 
-# 进入脚本所在目录
+# Go to the directory where the script is located
 cd "$(dirname "$0")"
 
-# 引入配置
+# Include configuration
 . /easytools/config.sh
 
 # Define colors and styles using tput
-BOLD=$(tput bold)
-GRAY=$(tput setaf 0)
-RED=$(tput setaf 1)
-GREEN=$(tput setaf 2)
-YELLOW=$(tput setaf 3)
-BLUE=$(tput setaf 4)
-PURPLE=$(tput setaf 5)
-CYAN=$(tput setaf 6)
-WHITE=$(tput setaf 7)
+BOLD=$(tput bold)         # 粗体
+DIM=$(tput dim)           # 细体
+GRAY=$(tput setaf 0)      # 灰色
+RED=$(tput setaf 1)       # 红色
+GREEN=$(tput setaf 2)     # 绿色
+YELLOW=$(tput setaf 3)    # 黄色
+BLUE=$(tput setaf 4)      # 蓝色
+PURPLE=$(tput setaf 5)    # 紫色
+CYAN=$(tput setaf 6)      # 青色
+WHITE=$(tput setaf 7)     # 白色
 
-RESET=$(tput sgr0)
+UNDERLINE=$(tput smul): # 下划线
+BLINK=$(tput blink):    # 闪烁
+REVERSE=$(tput rev):    # 反显
+
+RESET=$(tput sgr0)        # 重置样式
 
 # Define menu options
 options=(
-    "${BOLD}${PURPLE} XXX ${RESET}"
-    "${BOLD}${RED} 主菜单 ${RESET}"
+    "${BOLD}${BLUE}  ${RESET}\n"
+    
+    "${BOLD}${RED}  ${RESET}"
+    "${BOLD}${GREEN}  ${RESET}"
+    "${BOLD}${GRAY}  ${RESET}"
 )
 
-# Show 替换为实际名称
-function show_XXX() {
-    echo -e "======== XXX ========\n" # 换为实际名称
+# Show menu
+function show_menu() {
+    echo -e "${BOLD}${BLUE}———————————————————————————————— XX —————————————————————————————————— ${RESET}\n"
     for i in "${!options[@]}"; do
         if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
-            echo -e "${BOLD}${RED}m. ${options[$i]}${RESET}\n"  # 将返回选项标记为红色
+            echo -e "${BOLD}${WHITE}b. ${options[$i]}${RESET}"  # b back
         else
-            echo -e "${BOLD}${PURPLE}$((i+1)). ${options[$i]}${RESET}"
+            echo -e "${BOLD}${BLUE}$((i+1)). ${options[$i]}${RESET}"
         fi
     done
 }
 
 # Handle user choice
-function handle_choice() {
-    read -p "${BOLD}${BLUE} 请输入选项编号: ${RESET}" choice
-    # 1-1 菜单
+function menu_options() {
+    read -p "${BOLD}${BLUE} 请输入选项编号:${RESET}" choice
+    echo "DEBUG: User input is $choice"
     case $choice in
         1)
             clear
-            echo -e "${BOLD}${YELLOW} 选项1 ${RESET}"
-            # 在这里添加选项1的操作
+            echo -e "${BOLD}${YELLOW} XXX ${RESET}"
+            "$XXXXXXX"
         ;;
         2)
             clear
-            echo -e "${BOLD}${YELLOW} 选项2 ${RESET}"
-            # 在这里添加选项2的操作
+            echo -e "${BOLD}${YELLOW} XXX ${RESET}"
+            "$XXXXXX"
         ;;
-        M|m)
+        3)
             clear
-            echo "${BOLD}${RED} 返回主菜单！ ${RESET}"
+            echo -e "${BOLD}${YELLOW} XXX ${RESET}"
+            "$XXXXXXX"
+        ;;
+        4)
+            clear
+            echo -e "${BOLD}${YELLOW} XXX ${RESET}"
+            "$XXXXXX"
+        ;;
+        B|b)
+            clear
+            echo "${BOLD}${WHITE} 返回上一级 ${RESET}"
+            exit 0
         ;;
         *)
             clear
@@ -65,11 +84,10 @@ function handle_choice() {
     esac
 }
 
-# 主循环
 while true; do
-    show_XXX # 换为实际名称
-    handle_choice
-    if [[ $choice == "m" || $choice == "M" ]]; then
-        break  # 退出循环，返回到调用的主菜单
+    show_menu
+    menu_options
+    if [[ $choice == "b" || $choice == "B" ]]; then
+        break
     fi
 done

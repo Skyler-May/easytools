@@ -46,7 +46,7 @@ options=(
 )
 
 # Show menu
-function show_menu() {
+function show_acme_menu() {
     echo -e "${BOLD}${PURPLE}———————————————————————————————— 证书申请 —————————————————————————————————— ${RESET}\n"
     for i in "${!options[@]}"; do
         if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
@@ -58,7 +58,7 @@ function show_menu() {
 }
 
 # Handle user choice
-function menu_options() {
+function acme_menu_options() {
     read -p "${BOLD}${PURPLE} 请输入选项编号:${RESET}" choice
     echo "DEBUG: User input is $choice"
     case $choice in
@@ -85,8 +85,8 @@ function menu_options() {
 }
 
 while true; do
-    show_menu
-    menu_options
+    show_acme_menu
+    acme_menu_options
     if [[ $choice == "b" || $choice == "B" ]]; then
         break
     fi

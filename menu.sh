@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# root权限
+root_need(){
+    if [[ $EUID -ne 0 ]]; then
+        echo -e "\033[31m 错误:该脚本必须以 root 身份运行! \033[0m" 1>&2
+        exit 1
+    fi
+}
+
+root_need
+
 clear
 
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit
@@ -64,10 +74,10 @@ echo "${BOLD}${GRAY}Author: $AUTHOR${RESET}"
 
 # Define menu options
 options=(
-    "${BOLD}${BLUE} 站点部署 >> ${RESET}"
+    "${BOLD}${BLUE} 一键 Docker 部署 XrayR >> ${RESET}"
     "${BOLD}${BLUE} 证书申请 >> ${RESET}"
     "${BOLD}${BLUE} warp 解锁 Netflix >> ${RESET}"
-    "${BOLD}${BLUE} Docker LNMP >> ${RESET}\n"
+    "${BOLD}${BLUE} Docker 部署 LNMP >> ${RESET}\n"
     # "${BOLD}${GRAY} 开发中... >> ${RESET}"
     # "${BOLD}${GRAY} 开发中... >> ${RESET}"
     # "${BOLD}${GRAY} 开发中... >> ${RESET}"
@@ -99,7 +109,7 @@ function handle_choice() {
     case $choice in
         1)
             clear
-            echo -e "${BOLD}${YELLOW} 站点部署 ${RESET}\n"
+            echo -e "${BOLD}${YELLOW} Docker 部署 XrayR ${RESET}\n"
             "$WEBSITE_MENU_SCRIPT_PATH"
         ;;
         2)

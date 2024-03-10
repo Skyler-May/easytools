@@ -2,13 +2,8 @@
 
 clear
 
-# 进入脚本所在目录
 cd "$(dirname "$0")"
 
-# 保存脚本所在目录的路径
-SCRIPT_DIR="/easytools/warp" # 换为实际名称
-
-# 引入配置
 . /easytools/config.sh
 
 # Define colors and styles using tput
@@ -21,45 +16,50 @@ BLUE=$(tput setaf 4)
 PURPLE=$(tput setaf 5)
 CYAN=$(tput setaf 6)
 WHITE=$(tput setaf 7)
-
 RESET=$(tput sgr0)
 
 # Define menu options
 options=(
-    "${BOLD}${PURPLE} 安装 ${RESET}"
-    "${BOLD}${PURPLE} 呼出 warp ${RESET}\n"
+    "${BOLD}${PURPLE} 安装 XrayR >> ${RESET}"
+    "${BOLD}${PURPLE} 更新 XrayR  ${RESET}"
+    "${BOLD}${PURPLE} XrayR 日志  ${RESET}"
+    
     "${BOLD}${RED} 主菜单 ${RESET}"
 )
 
-# Show warp
-function show_warp_menu() {
-    echo -e "${BOLD}${PURPLE}======== warp ========${RESET}\n" # 换为实际名称
+function show_xrayr_menu() {
+    echo -e "=== XrayR 选项 ===\n"
     for i in "${!options[@]}"; do
         if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
-            echo -e "${BOLD}${RED}b. ${options[$i]}${RESET}\n"  # 将返回选项标记为红色
+            echo -e "${BOLD}${RED}b. ${options[$i]}${RESET}\n" # back
         else
             echo -e "${BOLD}${PURPLE}$((i+1)). ${options[$i]}${RESET}"
         fi
     done
 }
 
-# Handle user choice
-function warp_menu_choice() {
+function xrayr_menu_choice() {
     read -p "${BOLD}${BLUE} 请输入选项编号: ${RESET}" choice
-    # 1-1 菜单
     case $choice in
         1)
             clear
-            echo -e "${BOLD}${YELLOW} 安装 ${RESET}"
-            "$WARP_INSTALL_SCRIPT_PATH"
+            echo -e "${BOLD}${YELLOW} 正在安装... ${RESET}"
+            "$XRAYR_INSTALL_OPTIONS_SCRIPT_PATH"
         ;;
         2)
             clear
-            "$WARP_CALL_SCRIPT_PATH"
+            echo -e "${BOLD}${YELLOW} 更新中... ${RESET}"
+            "$UPDATE_XRAYR_SCRIPT_PATH"
         ;;
-        M|m)
+        2)
             clear
-            echo -e "${BOLD}${RED} [主菜单] ${RESET}"
+            echo -e "${BOLD}${YELLOW} 更新中... ${RESET}"
+            cd "$xrayr_release_dir"
+            docker-compose -f docker-compose.yml logs
+        ;;
+        b|B)
+            clear
+            echo "${BOLD}${WHITE} 返回主菜单！ ${RESET}"
         ;;
         *)
             clear
@@ -68,11 +68,10 @@ function warp_menu_choice() {
     esac
 }
 
-# 主循环
 while true; do
-    show_warp_menu # 换为实际名称
-    warp_menu_choice
+    show_xrayr_menu
+    xrayr_menu_choice
     if [[ $choice == "b" || $choice == "B" ]]; then
-        break  # 退出循环，返回到调用的主菜单
+        break
     fi
 done
