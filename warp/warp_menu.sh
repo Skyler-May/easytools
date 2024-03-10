@@ -52,7 +52,7 @@ function handle_choice() {
             clear
             echo -e "${BOLD}${YELLOW} 安装 ${RESET}"
             # 在这里添加选项1的操作
-            wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh [option] [license/url/token]
+            wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh [option] [lisence/url/token]
         ;;
         2)
             clear
