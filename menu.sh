@@ -15,7 +15,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" || exit
 # echo "Current working directory after cd: $(pwd)"
 
 # 引入配置
-. /easytools/config.sh
+. /config.sh
 
 # # 打印调试信息
 # echo "SCRIPT_DIR: $SCRIPT_DIR"
@@ -53,6 +53,13 @@ echo -e "${BOLD}${YELLOW} 温馨提示：${RESET}\n"
 echo -e "${BOLD}${YELLOW}       此脚本仅支持 Ubuntu Debian arm64 系统; ${RESET}"
 echo -e "${BOLD}${YELLOW}       amd 及其他系统敬请期待... ${RESET}"
 echo -e "${BOLD}${YELLOW}       安装完成后，再次使用只需键入 'et' 即可呼出脚本 ${RESET}\n"
+VERSION_INFO=$(cat ./version.json)
+VERSION=$(echo $VERSION_INFO | grep -o '"version": *"[^"]*"' | awk -F'"' '{print $4}')
+echo "Version: $VERSION"
+RELEASE_DATE=$(echo $VERSION_INFO | grep -o '"release_date": *"[^"]*"' | awk -F'"' '{print $4}')
+echo "Release Date: $RELEASE_DATE"
+AUTHOR=$(echo $VERSION_INFO | grep -o '"author": *"[^"]*"' | awk -F'"' '{print $4}')
+echo "Author: $AUTHOR"
 
 # Define menu options
 options=(

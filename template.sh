@@ -5,11 +5,8 @@ clear
 # 进入脚本所在目录
 cd "$(dirname "$0")"
 
-# 保存脚本所在目录的路径
-SCRIPT_DIR="/easytools/XXX" # 换为实际名称
-
 # 引入配置
-. "/easytools/config.sh"
+. "/config.sh"
 
 # Define colors and styles using tput
 BOLD=$(tput bold)
