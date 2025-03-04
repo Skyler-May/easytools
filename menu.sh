@@ -78,6 +78,7 @@ options=(
     "${BOLD}${BLUE} 证书申请 >> ${RESET}"
     "${BOLD}${BLUE} warp 解锁 Netflix >> ${RESET}"
     "${BOLD}${BLUE} Docker 部署 LNMP >> ${RESET}\n"
+    "${BOLD}${BLUE} ubuntu/Debian 一键彻底卸载 aaPanel ${RESET}\n"
 
     "${BOLD}${RED} 退出 ${RESET}"
     "${BOLD}${GREEN} 更新 ${RESET}"
@@ -124,6 +125,10 @@ function handle_choice() {
             echo -e "${BOLD}${YELLOW} Docker LNMP ${RESET}"
             "$DOCKER_LNMP_MENU_SCRIPT_PATH"
         ;;
+        5)
+            clear
+            echo "${BOLD}${RED} 彻底卸载 aaPanel ${RESET}"
+            "$UNINSTALL_BT_SCRIPT_PATH"
         Q|q)
             clear
             echo "${BOLD}${RED} 谢谢使用，再见！ ${RESET}"
