@@ -51,7 +51,7 @@ done
 
 echo ""
 echo -e "${BOLD}${YELLOW} 使用：${RESET}"
-echo -e "${BOLD}${YELLOW}    安装完成后，再次使用只需键入 'et' 即可调出脚本 ${RESET}\n"
+echo -e "${BOLD}${YELLOW}    安装完成后，再次使用只需键入 'tools' 即可调出脚本 ${RESET}\n"
 
 ip_address=$(curl -s ifconfig.me)
 region_code=$(curl -s ipinfo.io/country)

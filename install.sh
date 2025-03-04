@@ -19,7 +19,7 @@ git clone https://github.com/Sam-Mey/easytools.git
 find /easytools -name "*.sh" -exec chmod +x {} \;
 
 # Create a symbolic link for menu.sh
-ln -s "/easytools/menu.sh" "/usr/local/bin/et"
+ln -s "/easytools/menu.sh" "/usr/local/bin/tools"
 
 # Check if it's not being run for removal
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
