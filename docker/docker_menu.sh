@@ -67,7 +67,7 @@ function docker_menu_choice() {
         ;;
         4)
             clear
-            echo -e "${BOLD}${YELLOW} 检测系统并安装 Docker ${RESET}"
+            echo -e "${BOLD}${YELLOW} DD系统 安装 Docker ${RESET}"
             "$DDSYSTEM_SCRIPT_PATH"
         ;;
         5)
