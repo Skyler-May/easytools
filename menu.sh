@@ -74,14 +74,11 @@ echo "${BOLD}${GRAY}Author: $AUTHOR${RESET}"
 
 # Define menu options
 options=(
-    "${BOLD}${BLUE} 一键 Docker 部署 XrayR >> ${RESET}"
+    "${BOLD}${BLUE} 安装 Docker  >> ${RESET}"
     "${BOLD}${BLUE} 证书申请 >> ${RESET}"
     "${BOLD}${BLUE} warp 解锁 Netflix >> ${RESET}"
     "${BOLD}${BLUE} Docker 部署 LNMP >> ${RESET}\n"
-    # "${BOLD}${GRAY} 开发中... >> ${RESET}"
-    # "${BOLD}${GRAY} 开发中... >> ${RESET}"
-    # "${BOLD}${GRAY} 开发中... >> ${RESET}"
-    # "${BOLD}${GRAY} 开发中... >> ${RESET}\n"
+
     "${BOLD}${RED} 退出 ${RESET}"
     "${BOLD}${GREEN} 更新 ${RESET}"
     "${BOLD}${GRAY} 卸载 ${RESET}"
@@ -109,12 +106,12 @@ function handle_choice() {
     case $choice in
         1)
             clear
-            echo -e "${BOLD}${YELLOW} Docker 部署 XrayR ${RESET}\n"
-            "$XRAYR_MENU_SCRIPT_PATH"
+            echo -e "${BOLD}${YELLOW} 安装 Docker ${RESET}\n"
+            "$DDSYSTEM_SCRIPT_PATH"
         ;;
         2)
             clear
-            echo -e "${BOLD}${YELLOW} 证书申请 ${RESET}"
+            echo -e "${BOLD}${YELLOW} acme 证书申请 ${RESET}"
             "$ACME_SCRIPT_PATH"
         ;;
         3)
