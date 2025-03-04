@@ -20,4 +20,4 @@ tools
 
 > 证书申请需要事先开发 `80` 端口，并不能被其他程序占用，成功后将会在 `root/certs` 目录下
 >
-> warp 解锁 Netflix 是缝合 `第三方大神之作` 介意请勿选择此项。或手动安装（BUG:如安装了`warp 解锁 Netflix`此项，终端键入 `et` 将不会再次跳出 `easytools` 脚本，而是 `warp` 的安装界面）`
+> warp 解锁 Netflix 是缝合 `第三方大神之作` 介意请勿选择此项。或手动安装（BUG:如安装了`warp 解锁 Netflix`此项，终端键入 `tools` 将不会再次跳出 `easytools` 脚本，而是 `warp` 的安装界面）`
