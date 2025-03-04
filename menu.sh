@@ -79,8 +79,8 @@ options=(
     "${BOLD}${BLUE} warp 解锁 Netflix >> ${RESET}"
     "${BOLD}${BLUE} Docker 部署 LNMP >> ${RESET}\n"
 
-    "${BOLD}${RED} 退出 ${RESET}"
     "${BOLD}${GREEN} 更新 ${RESET}"
+    "${BOLD}${RED} 退出 ${RESET}"
     "${BOLD}${GRAY} 卸载 ${RESET}"
 )
 
@@ -124,15 +124,15 @@ function handle_choice() {
             echo -e "${BOLD}${YELLOW} Docker LNMP ${RESET}"
             "$DOCKER_LNMP_MENU_SCRIPT_PATH"
         ;;
-        Q|q)
-            clear
-            echo "${BOLD}${RED} 谢谢使用，再见！ ${RESET}"
-            exit 0
-        ;;
         U|u)
             clear
             echo "${BOLD}${GREEN} 正在更新 EasyTools... ${RESET}"
             "$UPDATE_SCRIPT_PATH"
+        ;;
+        Q|q)
+            clear
+            echo "${BOLD}${RED} 谢谢使用，再见！ ${RESET}"
+            exit 0
         ;;
         D|d)
             clear
