@@ -3,7 +3,7 @@
 ## 首次安装
 
 ```bash
-curl -O https://github.com/Skyler-May/easytools/blob/main/install.sh \
+curl -O https://raw.githubusercontent.com/Skyler-May/easytools/refs/heads/main/install.sh \
     && chmod +x install.sh \
     && ./install.sh
 ```
