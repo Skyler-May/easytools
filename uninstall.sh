@@ -25,10 +25,10 @@ if [ -n "$result" ]; then
     # 删除 'easytools' 文件夹
     rm -rf "$result"
     
-    # 删除 '/usr/local/bin/et' 链接
-    rm -f /usr/local/bin/et
+    # 删除 '/usr/local/bin/tools' 链接
+    rm -f /usr/local/bin/tools
     
-    echo "${BOLD}${RED} 删除了 'easytools' 主体 和 'et' 快捷方式. ${RESET}"
+    echo "${BOLD}${RED} 删除了 'easytools' 主体 和 'tools' 快捷方式. ${RESET}"
 else
     echo "${BOLD}${RED} 在任何目录中找不到关于“easytools”文件夹. ${RESET}"
 fi

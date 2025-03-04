@@ -4,7 +4,7 @@
 current_dir=$(pwd)
 
 # 克隆远程仓库
-git clone https://github.com/Sam-Mey/easytools.git tmp_easytools
+git clone https://github.com/Skyler-May/easytools.git tmp_easytools
 
 # 切换到/easytools目录
 cd /easytools || exit
@@ -18,8 +18,8 @@ git reset --hard origin/master
 # 将所有 .sh 文件添加执行权限
 find . -name "*.sh" -exec chmod +x {} \;
 
-# 创建符号链接，使得 'et' 命令指向 menu.sh
-ln -sf "/easytools/menu.sh" "/usr/local/bin/et"
+# 创建符号链接，使得 'tools' 命令指向 menu.sh
+ln -sf "/easytools/menu.sh" "/usr/local/bin/tools"
 
 # 用最新内容替换当前目录的文件
 rsync -av --exclude='.git' tmp_easytools/ .
@@ -30,8 +30,8 @@ cd "$current_dir" || exit
 # 清理临时目录
 rm -rf tmp_easytools
 
-# 运行 'et' 命令（确保 'et' 在这一步之前已经设置好）
-et
+# 运行 'tools' 命令（确保 'tools' 在这一步之前已经设置好）
+tools
 
 # 打印调试信息
 # echo "Cloning the repository..."
