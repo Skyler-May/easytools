@@ -8,7 +8,7 @@ curl -O https://raw.githubusercontent.com/Skyler-May/easytools/refs/heads/main/i
     && ./install.sh
 ```
 
-## 再次只需要 `et` 呼出脚本
+## 再次只需要 `tools` 呼出脚本
 
 ## 使用说明：
 

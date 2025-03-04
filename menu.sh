@@ -107,7 +107,7 @@ function handle_choice() {
         1)
             clear
             echo -e "${BOLD}${YELLOW} 安装 Docker ${RESET}\n"
-            "$DDSYSTEM_SCRIPT_PATH"
+            "$DOCKER_MENU_SCRIPT_PATH"
         ;;
         2)
             clear
