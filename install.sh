@@ -27,4 +27,4 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
 fi
 
 # Run 'et' command (make sure 'et' is set up before this point)
-et
+tools
