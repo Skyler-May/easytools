@@ -26,5 +26,5 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     rm -rf /root/install.sh
 fi
 
-# Run 'et' command (make sure 'et' is set up before this point)
+# Run 'tools' command (make sure 'tools' is set up before this point)
 tools
