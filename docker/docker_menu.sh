@@ -126,7 +126,7 @@ function docker_menu_choice() {
         b|B)
             clear
             echo "${BOLD}${WHITE} 返回主菜单！ ${RESET}"
-            break
+            return
         ;;
         *)
             clear
