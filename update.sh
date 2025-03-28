@@ -3,35 +3,14 @@
 # 保存当前目录
 current_dir=$(pwd)
 
-# 设置安装目录
-INSTALL_DIR="/easytools"
+# 克隆远程仓库
+git clone https://github.com/Skyler-May/easytools.git tmp_easytools
 
-# 检查并创建临时目录
-TMP_DIR="tmp_easytools"
-if [ -d "$TMP_DIR" ]; then
-    rm -rf "$TMP_DIR"
-fi
-
-# 克隆远程仓库到临时目录
-git clone https://github.com/Skyler-May/easytools.git "$TMP_DIR"
-
-# 检查克隆是否成功
-if [ ! -d "$TMP_DIR" ]; then
-    echo -e "\033[31m 错误: 克隆仓库失败! \033[0m"
-    exit 1
-fi
-
-# 切换到安装目录
-cd "$INSTALL_DIR" || {
-    echo -e "\033[31m 错误: 无法切换到安装目录! \033[0m"
-    exit 1
-}
+# 切换到/easytools目录
+cd /easytools || exit
 
 # 拉取远程仓库的最新变更
-git fetch origin || {
-    echo -e "\033[31m 错误: 无法获取最新更新! \033[0m"
-    exit 1
-}
+git fetch origin
 
 # 重置本地仓库到最新的提交
 git reset --hard origin/master
@@ -39,39 +18,27 @@ git reset --hard origin/master
 # 将所有 .sh 文件添加执行权限
 find . -name "*.sh" -exec chmod +x {} \;
 
-# 检查menu.sh是否存在
-if [ ! -f "$INSTALL_DIR/menu.sh" ]; then
-    echo -e "\033[31m 错误: menu.sh 文件不存在! \033[0m"
-    exit 1
-fi
-
-# 更新符号链接
-if [ -L "/usr/local/bin/tools" ]; then
-    rm -f "/usr/local/bin/tools"
-fi
-
-ln -sf "$INSTALL_DIR/menu.sh" "/usr/local/bin/tools"
-
-# 验证符号链接
-if [ ! -L "/usr/local/bin/tools" ]; then
-    echo -e "\033[31m 错误: 更新符号链接失败! \033[0m"
-    exit 1
-fi
+# 创建符号链接，使得 'tools' 命令指向 menu.sh
+ln -sf "/easytools/menu.sh" "/usr/local/bin/tools"
 
 # 用最新内容替换当前目录的文件
-rsync -av --exclude='.git' "$TMP_DIR/" .
+rsync -av --exclude='.git' tmp_easytools/ .
 
 # 切换回原始目录
 cd "$current_dir" || exit
 
 # 清理临时目录
-rm -rf "$TMP_DIR"
+rm -rf tmp_easytools
 
-# 检查tools命令是否可执行
-if ! command -v tools &> /dev/null; then
-    echo -e "\033[31m 错误: tools 命令未能正确更新! \033[0m"
-    exit 1
-fi
-
-# 运行tools命令
+# 运行 'tools' 命令（确保 'tools' 在这一步之前已经设置好）
 tools
+
+# 打印调试信息
+# echo "Cloning the repository..."
+# echo "Fetching the latest changes..."
+# echo "Resetting local repository to the latest commit..."
+# echo "Adding execute permissions to .sh files..."
+# echo "Creating symbolic link for menu.sh..."
+# echo "Replacing current content with updated content..."
+# echo "Cleaning up temporary directory..."
+# echo "Running 'et' command..."
