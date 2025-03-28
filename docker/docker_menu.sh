@@ -31,6 +31,8 @@ options=(
     "${BOLD}${BLUE} 安装 Docker Compose ${RESET}"
     "${BOLD}${BLUE} 检测系统并安装 Docker ${RESET}"
     "${BOLD}${BLUE} Ubuntu/Debian 系统安装 Docker ${RESET}\n"
+
+    "${BOLD}${RED} 卸载 Docker 与 Docker-Compose ${RESET}"
     "${BOLD}${RED} 主菜单 ${RESET}"
 )
 
@@ -38,8 +40,10 @@ options=(
 function show_docker_menu() {
     echo -e "${BOLD}${BLUE}======== Docker 安装菜单 ========${RESET}\n"
     for i in "${!options[@]}"; do
-        if [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
-            echo -e "${BOLD}${RED}b. ${options[$i]}${RESET}\n"  # 将返回选项标记为红色
+        if [[ $i -eq $(( ${#options[@]} - 2 )) ]]; then
+            echo -e "${BOLD}${RED}d. 卸载 Docker 与 Docker-Compose${RESET}"
+        elif [[ $i -eq $(( ${#options[@]} - 1 )) ]]; then
+            echo -e "${BOLD}${RED}b. 主菜单 ${options[$i]}${RESET}\n"  # 将返回选项标记为红色
         else
             echo -e "${BOLD}${BLUE}$((i+1)). ${options[$i]}${RESET}"
         fi
@@ -75,6 +79,10 @@ function docker_menu_choice() {
             echo -e "${BOLD}${YELLOW} Ubuntu/Debian 系统安装 Docker ${RESET}"
             "$UBUNTU_DEBIAN_SCRIPT_PATH"
         ;;
+        d|D)
+            clear
+            echo -e "${BOLD}${RED} 卸载 Docker 与 Docker-Compose ${RESET}"
+            "$UNINSTALL_DOCKER_SCRIPT_PATH"
         b|B)
             clear
             echo "${BOLD}${WHITE} 返回主菜单！ ${RESET}"
